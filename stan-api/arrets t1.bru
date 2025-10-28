@@ -1,0 +1,69 @@
+meta {
+  name: arrets t1
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://www.reseau-stan.com/?type=476
+  body: text
+  auth: inherit
+}
+
+params:query {
+  type: 476
+}
+
+headers {
+  Host: www.reseau-stan.com
+  User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0
+  Accept: */*
+  Accept-Language: en-US,en;q=0.5
+  Accept-Encoding: gzip, deflate, br, zstd
+  Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+  X-Requested-With: XMLHttpRequest
+  Content-Length: 158
+  Origin: https://www.reseau-stan.com
+  Sec-GPC: 1
+  Connection: keep-alive
+  Referer: https://www.reseau-stan.com/
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  Priority: u=0
+  TE: trailers
+}
+
+body:text {
+  requete=tempsreel_arrets&requete_val%5Bligne%5D=2484&requete_val%5Bcolor%5D=%23FFFFFF&requete_val%5Bbackground%5D=%23E30613&requete_val%5Bnumlignepublic%5D=T1
+}
+
+body:form-urlencoded {
+  requete: "tempsreel_arrets"
+  requete[ligne]: "2484"
+  requete[color]: "#FFFFFF"
+  requete[background]: "#E30613"
+  requete[numlignepublic]: "T1"
+}
+
+body:multipart-form {
+  : 
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+docs {
+  numlignepublic doit etre la ligne de bus choisie. Elle peut etre:
+  - T1 / 2 / 3 / 4 / 5
+  - Corol
+  - 10 jusqu'a 18
+  - 20 jusqu'a 24
+  - 30
+  - 32
+  - 33
+  - Citadine+1/2
+  - 50 jusqu'a 67
+}
