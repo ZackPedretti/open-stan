@@ -1,3 +1,6 @@
+mod endpoints;
+mod entities;
+
 async fn hello_world() -> &'static str {
     "Hello, world!"
 }
