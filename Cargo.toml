@@ -9,3 +9,4 @@ tokio = { version = "1.48.0", features = ["full"] }
 tower = "0.5.2"
 reqwest = "0.12.24"
 serde = { version = "1.0.228", features = ["derive"]}
+anyhow = "1.0.100"

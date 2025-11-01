@@ -1,9 +1,10 @@
 use axum::response::IntoResponse;
 use axum::{Json, Router};
 use axum::routing::get;
-use crate::entities::lanes::Lane;
+use crate::entities::api_state::ApiState;
+use crate::entities::lane::Lane;
 
-pub fn router() -> Router {
+pub fn router() -> Router<ApiState> {
     Router::new()
         .route("/", get(get_all_lanes))
 }

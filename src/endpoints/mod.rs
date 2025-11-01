@@ -1,3 +1,3 @@
 mod time;
-mod stops;
+pub(crate) mod stops;
 pub(crate) mod lanes;

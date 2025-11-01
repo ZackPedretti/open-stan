@@ -7,11 +7,16 @@ async fn welcome() -> &'static str {
 
 use axum::{Router, routing::get};
 use std::net::SocketAddr;
+use reqwest::Client;
+use crate::entities::api_state::ApiState;
 
-fn init_router() -> Router {
-    Router::new()
+fn init_router() -> Router{
+    let state = ApiState { client: Client::new() };
+    let router = Router::new()
         .route("/", get(welcome))
         .nest("/lanes", endpoints::lanes::router())
+        .nest("/stop", endpoints::stops::router());
+    router.with_state(state)
 }
 
 #[tokio::main]
