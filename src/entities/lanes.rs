@@ -64,6 +64,67 @@ impl Lane {
     }
 }
 
+// Yes, this is ugly. But this is done for performance: it is statically defined to be of type &'static[Lane]
+impl Lane {
+    pub fn all() -> &'static [Lane] {
+        const ALL_LANES: &[Lane] = &[
+            // T lanes
+            Lane::T { num: 1 },
+            Lane::T { num: 2 },
+            Lane::T { num: 3 },
+            Lane::T { num: 4 },
+            Lane::T { num: 5 },
+
+            // Corol
+            Lane::Corol,
+
+            // N lanes
+            Lane::N { num: 10 },
+            Lane::N { num: 11 },
+            Lane::N { num: 12 },
+            Lane::N { num: 13 },
+            Lane::N { num: 14 },
+            Lane::N { num: 15 },
+            Lane::N { num: 16 },
+            Lane::N { num: 17 },
+            Lane::N { num: 18 },
+            Lane::N { num: 20 },
+            Lane::N { num: 21 },
+            Lane::N { num: 22 },
+            Lane::N { num: 23 },
+            Lane::N { num: 24 },
+            Lane::N { num: 30 },
+            Lane::N { num: 32 },
+            Lane::N { num: 33 },
+            Lane::N { num: 50 },
+            Lane::N { num: 51 },
+            Lane::N { num: 52 },
+            Lane::N { num: 53 },
+            Lane::N { num: 54 },
+            Lane::N { num: 55 },
+            Lane::N { num: 56 },
+            Lane::N { num: 57 },
+            Lane::N { num: 58 },
+            Lane::N { num: 59 },
+            Lane::N { num: 60 },
+            Lane::N { num: 61 },
+            Lane::N { num: 62 },
+            Lane::N { num: 63 },
+            Lane::N { num: 64 },
+            Lane::N { num: 65 },
+            Lane::N { num: 66 },
+            Lane::N { num: 67 },
+
+            // Citadine lanes
+            Lane::Citadine { num: 1 },
+            Lane::Citadine { num: 2 },
+        ];
+
+        ALL_LANES
+    }
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::Lane;
@@ -232,5 +293,86 @@ mod tests {
         } else {
             panic!("expected new_num_lane(10) to be Some");
         }
+    }
+}
+
+#[test]
+fn test_all_lanes_complete_and_consistent() {
+    let all = Lane::all();
+
+    // --- 1️⃣ Check total count ---
+    // From docs:
+    // T1-5 (5) + Corol (1) + N(10–18=9, 20–24=5, 30,32,33=3, 50–67=18) + Citadine(2)
+    // Total = 5 + 1 + (9+5+3+18) + 2 = 43 + 8 = 51
+    let expected_count = 5 + 1 + 9 + 5 + 3 + 18 + 2;
+    assert_eq!(
+        all.len(),
+        expected_count,
+        "Unexpected number of lanes in Lane::all()"
+    );
+
+    // --- 2️⃣ Check no duplicates ---
+    use std::collections::HashSet;
+    let mut seen = HashSet::new();
+    for lane in all {
+        let key = lane.to_text(); // String
+        assert!(
+            seen.insert(key.clone()),
+            "Duplicate lane found: {}",
+            key
+        );
+    }
+
+    // --- 3️⃣ Check all known lanes are present ---
+    // Build expected lane names according to spec
+    let mut expected_names = Vec::new();
+
+    // T1..=5
+    for n in 1..=5 {
+        expected_names.push(format!("T{}", n));
+    }
+    // Corol
+    expected_names.push("Corol".to_string());
+
+    // N lanes
+    for n in 10..=18 {
+        expected_names.push(n.to_string());
+    }
+    for n in 20..=24 {
+        expected_names.push(n.to_string());
+    }
+    for n in [30, 32, 33] {
+        expected_names.push(n.to_string());
+    }
+    for n in 50..=67 {
+        expected_names.push(n.to_string());
+    }
+
+    // Citadine
+    for n in 1..=2 {
+        expected_names.push(format!("Citadine {}", n));
+    }
+
+    let all_names: Vec<_> = all.iter().map(|l| l.to_text()).collect();
+
+    for expected in &expected_names {
+        assert!(
+            all_names.contains(expected),
+            "Missing expected lane '{}'",
+            expected
+        );
+    }
+
+    // --- 4️⃣ Roundtrip consistency ---
+    for lane in all {
+        let text = lane.to_text();
+        let parsed = Lane::from_text(&text)
+            .unwrap_or_else(|| panic!("Lane::from_text failed for '{}'", text));
+        let re_text = parsed.to_text();
+        assert_eq!(
+            text, re_text,
+            "Roundtrip mismatch: '{}' → {:?} → '{}'",
+            text, parsed, re_text
+        );
     }
 }
