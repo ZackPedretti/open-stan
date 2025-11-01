@@ -4,6 +4,7 @@ An open-source REST API built on top of the **official STAN (Société de Transp
 This project aims to provide a **simple, accessible, and community-driven API** for developers who want to build apps, tools, or dashboards using public transport data from the Nancy metropolitan area.
 
 [French version of the README file](./README.fr.md)
+
 ---
 
 ## 🚀 Features
