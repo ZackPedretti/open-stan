@@ -1,7 +1,7 @@
 mod endpoints;
 mod entities;
 
-async fn hello_world() -> &'static str {
+async fn welcome() -> &'static str {
     "Hello, world!"
 }
 
@@ -9,7 +9,9 @@ use axum::{Router, routing::get};
 use std::net::SocketAddr;
 
 fn init_router() -> Router {
-    Router::new().route("/", get(hello_world))
+    Router::new()
+        .route("/", get(welcome))
+        .nest("/lanes", endpoints::lanes::router())
 }
 
 #[tokio::main]

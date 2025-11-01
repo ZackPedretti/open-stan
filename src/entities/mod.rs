@@ -1,1 +1,1 @@
-mod lanes;
+pub mod lanes;

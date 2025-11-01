@@ -1,5 +1,8 @@
+use serde::{Serialize, Serializer};
+use serde::ser::SerializeStruct;
+
 #[derive(Debug)]
-enum Lane {
+pub enum Lane {
     T { num: usize },
     Corol,
     N { num: usize },
@@ -61,6 +64,17 @@ impl Lane {
                 format!("Citadine {}", num)
             }
         }
+    }
+}
+
+impl Serialize for Lane {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer
+    {
+        let mut state = serializer.serialize_struct("Lane", 1)?;
+        state.serialize_field("name", &self.to_text())?;
+        state.end()
     }
 }
 
