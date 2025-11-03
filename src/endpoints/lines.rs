@@ -31,11 +31,6 @@ async fn request_presigned(state: &ApiState, url: String) -> anyhow::Result<Stri
         .json(&json!({
             "method": "POST",
             "path": url,
-            "query": {
-                "disable_geojson": "true",
-                "count": "100",
-                "filter": "physical_mode.id=physical_mode:Bus"
-            },
             "clientName": "stan"
         }))
         .send()
