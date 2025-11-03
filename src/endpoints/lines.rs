@@ -18,8 +18,6 @@ async fn get_all_lanes(State(state): State<ApiState>) -> impl IntoResponse {
             Err(e) => return (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
         };
 
-    println!("{}", &presigned_url);
-
     match request_lines(&state, presigned_url).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
