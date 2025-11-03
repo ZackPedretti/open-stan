@@ -1,0 +1,20 @@
+meta {
+  name: one lane presign
+  type: http
+  seq: 9
+}
+
+post {
+  url: https://nws-main.hove.io/api/presign
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {"method":"POST","path":"/v1/coverage/fr-ne-nancy/lines/line:GST:1-97","query":{"disable_geojson":"true","count":"100","filter":"physical_mode.id=physical_mode:Bus"},"clientName":"stan"}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
