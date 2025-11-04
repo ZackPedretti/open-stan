@@ -1,5 +1,6 @@
 mod endpoints;
 mod entities;
+mod utils;
 
 async fn welcome() -> &'static str {
     "Hello, world!"
@@ -7,7 +8,6 @@ async fn welcome() -> &'static str {
 
 use crate::entities::api_state::ApiState;
 use axum::{Router, routing::get};
-use reqwest::Client;
 use std::net::SocketAddr;
 
 fn init_router() -> anyhow::Result<Router> {
@@ -18,7 +18,7 @@ fn init_router() -> anyhow::Result<Router> {
     let router = Router::new()
         .route("/", get(welcome))
         .nest("/lines", endpoints::lines::router())
-        .nest("/stop", endpoints::stops::router());
+        .nest("/stops", endpoints::stops::router());
     Ok(router.with_state(state))
 }
 

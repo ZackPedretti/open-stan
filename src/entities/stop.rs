@@ -1,9 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Stop {
-    id: String,
-    name: String,
-    lon: i32,
-    lat: i32,
+    pub(crate) id: String,
+    pub(crate) name: String,
+    pub(crate) label: String,
 }
