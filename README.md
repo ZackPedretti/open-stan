@@ -8,7 +8,7 @@ This project aims to provide a **simple, accessible, and community-driven API** 
 ---
 
 ## 🚀 Features
-- Exposes public endpoints for STAN bus data (lines, stops, routes, schedules, real-time arrivals, etc.)
+- Exposes public endpoints for STAN bus data (lines, stops, real-time arrivals)
 - Built with modern RESTful design principles
 - Lightweight, open-source, and easy to deploy
 - Designed for developers who want to integrate STAN data into their own apps or services
