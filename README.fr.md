@@ -6,7 +6,7 @@ Ce projet a pour objectif de fournir une **API simple, accessible et communautai
 ---
 
 ## 🚀 Fonctionnalités
-- Fournit des points d’accès publics aux données STAN (lignes, arrêts, trajets, horaires, arrivées en temps réel, etc.)
+- Fournit des points d’accès publics aux données STAN (lignes, arrêts, arrivées en temps réel, etc.)
 - Conçu selon les principes modernes des API REST
 - Léger, open source et facile à déployer
 - Idéal pour les développeurs souhaitant intégrer les données STAN dans leurs propres applications ou services
