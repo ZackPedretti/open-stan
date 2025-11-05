@@ -7,3 +7,9 @@ pub struct Stop {
     pub(crate) name: String,
     pub(crate) label: String,
 }
+
+impl Stop {
+    pub fn get_unique_identifier(&self) -> String {
+        self.id.split(':').last().unwrap().to_string()
+    }
+}
