@@ -14,7 +14,7 @@ pub fn router() -> Router<ApiState> {
 
 async fn get_all_lanes(State(state): State<ApiState>) -> impl IntoResponse {
     let presigned_url =
-        match request_presigned(&state, "/v1/coverage/fr-ne-nancy/lines".to_string()).await {
+        match request_presigned(&state.client, "/v1/coverage/fr-ne-nancy/lines".to_string()).await {
             Ok(v) => v,
             Err(e) => return (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
         };
@@ -30,7 +30,7 @@ struct LinesResponse {
     lines: Vec<Line>,
 }
 
-async fn request_lines(client: &Client, presigned_url: String) -> anyhow::Result<Vec<Line>> {
+pub async fn request_lines(client: &Client, presigned_url: String) -> anyhow::Result<Vec<Line>> {
     let json_response: LinesResponse = client
         .post("https://nws-main.hove.io/api/proxy")
         .json(&json!({

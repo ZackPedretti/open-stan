@@ -1,6 +1,6 @@
 use axum::http::HeaderMap;
+use reqwest::Client;
 use serde_json::{json, Map};
-use crate::entities::api_state::ApiState;
 
 pub fn get_stan_api_calls_headers() -> HeaderMap {
     let mut headers = HeaderMap::new();
@@ -10,9 +10,8 @@ pub fn get_stan_api_calls_headers() -> HeaderMap {
     headers
 }
 
-pub async fn request_presigned(state: &ApiState, url: String) -> anyhow::Result<String> {
-    let json_response: Map<String, serde_json::Value> = state
-        .client
+pub async fn request_presigned(client: &Client, url: String) -> anyhow::Result<String> {
+    let json_response: Map<String, serde_json::Value> = client
         .post("https://nws-main.hove.io/api/presign")
         .json(&json!({
             "method": "POST",
