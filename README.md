@@ -17,7 +17,7 @@ This project aims to provide a **simple, accessible, and community-driven API** 
 
 ## 🧰 Tech Stack
 - **Backend:** Rust + Axum  
-- **Data Source:** [Official STAN network API](https://www.reseau-stan.com)  
+- **Data Source:** [Official STAN network APIs](https://www.reseau-stan.com)  
 - **License:** MIT
 
 ---
