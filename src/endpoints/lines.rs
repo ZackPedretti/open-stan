@@ -1,25 +1,21 @@
 use crate::entities::{api_state::ApiState, line::Line};
+use crate::utils::request_presigned;
 use axum::extract::State;
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
+use scraper::{Html, Selector};
+use scraper::Node::Document;
 use serde::Deserialize;
 use serde_json::{Map, json};
-use crate::utils::request_presigned;
 
 pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_all_lanes))
 }
 
 async fn get_all_lanes(State(state): State<ApiState>) -> impl IntoResponse {
-    let presigned_url =
-        match request_presigned(&state.client, "/v1/coverage/fr-ne-nancy/lines".to_string()).await {
-            Ok(v) => v,
-            Err(e) => return (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
-        };
-
-    match request_lines(&state.client, presigned_url).await {
+    match request_lines(&state.client).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
     }
@@ -30,18 +26,37 @@ struct LinesResponse {
     lines: Vec<Line>,
 }
 
-pub async fn request_lines(client: &Client, presigned_url: String) -> anyhow::Result<Vec<Line>> {
-    let json_response: LinesResponse = client
-        .post("https://nws-main.hove.io/api/proxy")
-        .json(&json!({
-            "presignedUrl": presigned_url,
-            "href": "https://api.navitia.io/v1/coverage/fr-ne-nancy/lines",
-            "clientName": "stan"
-        }))
+pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
+    let html = client
+        .get("https://www.reseau-stan.com/")
         .send()
         .await?
-        .json()
+        .text()
         .await?;
 
-    Ok(json_response.lines)
+    let mut lines: Vec<Line> = vec![];
+
+    let document = Html::parse_document(&html);
+    let line_options_selector = Selector::parse("select#form_ligne option").unwrap();
+
+    for elt in document.select(&line_options_selector) {
+        if elt.value().attr("disabled").is_some() {
+            continue;
+        }
+
+        let get = |name: &str| elt.value().attr(name).unwrap_or("").to_string();
+
+        let line = Line{
+            id: get("data-osmid"),
+            number: get("value").parse()?,
+            name: get("data-libelle"),
+            code: get("data-numlignepublic"),
+            color: get("data-backgroundcolor"),
+            text_color: get("data-color"),
+        };
+        
+        lines.push(line);
+    }
+
+    Ok(lines)
 }
