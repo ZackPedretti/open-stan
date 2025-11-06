@@ -49,9 +49,7 @@ struct StopsResponse {
 }
 
 async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
-    let presigned_url =
-        request_presigned(client, "/v1/coverage/fr-ne-nancy/lines".to_string()).await?;
-    let lines = request_lines(client, presigned_url).await?;
+    let lines = request_lines(client).await?;
 
     let mut all_stops: HashSet<Stop> = HashSet::new();
 
