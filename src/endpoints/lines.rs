@@ -1,14 +1,10 @@
 use crate::entities::{api_state::ApiState, line::Line};
-use crate::utils::request_presigned;
 use axum::extract::State;
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
 use scraper::{Html, Selector};
-use scraper::Node::Document;
-use serde::Deserialize;
-use serde_json::{Map, json};
 
 pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_all_lanes))
@@ -19,11 +15,6 @@ async fn get_all_lanes(State(state): State<ApiState>) -> impl IntoResponse {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
     }
-}
-
-#[derive(Deserialize)]
-struct LinesResponse {
-    lines: Vec<Line>,
 }
 
 pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
@@ -37,7 +28,7 @@ pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
     let mut lines: Vec<Line> = vec![];
 
     let document = Html::parse_document(&html);
-    let line_options_selector = Selector::parse("select#form_ligne option").unwrap();
+    let line_options_selector = Selector::parse("select#form_ligne option").expect("There was a problem with the HTML document.");
 
     for elt in document.select(&line_options_selector) {
         if elt.value().attr("disabled").is_some() {
