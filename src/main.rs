@@ -18,7 +18,8 @@ fn init_router() -> anyhow::Result<Router> {
     let router = Router::new()
         .route("/", get(welcome))
         .nest("/lines", endpoints::lines::router())
-        .nest("/stops", endpoints::stops::router());
+        .nest("/stops", endpoints::stops::router())
+        .nest("/times", endpoints::times::router());
     Ok(router.with_state(state))
 }
 

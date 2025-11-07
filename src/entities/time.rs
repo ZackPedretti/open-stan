@@ -3,7 +3,8 @@ use crate::entities::line::Line;
 
 #[derive(Deserialize, Serialize)]
 pub struct Time {
-    line: Line,
-    times: Vec<String>,
-    direction: String
+    pub(crate) time: String,
+    pub(crate) direction: String,
+    pub(crate) static_time: bool,
+    pub(crate) line: Line,
 }

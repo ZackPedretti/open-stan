@@ -1,17 +1,16 @@
 use crate::endpoints::lines::request_lines;
 use crate::entities::api_state::ApiState;
 use crate::entities::stop::Stop;
-use crate::utils::{get_stan_api_calls_headers, request_presigned};
+use crate::utils::{request_presigned};
 use axum::extract::{Query, State};
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
-use scraper::{Html, Selector};
+use scraper::{Selector};
 use serde::Deserialize;
 use serde_json::json;
 use std::collections::HashSet;
-use std::iter::Map;
 
 pub fn router() -> Router<ApiState> {
     let router: Router<ApiState> = Router::new().route("/", get(get_stops));
