@@ -1,5 +1,5 @@
 [package]
-name = "axum-stan"
+name = "open-stan"
 version = "0.1.0"
 edition = "2024"
 

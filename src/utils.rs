@@ -52,3 +52,18 @@ pub fn get_line_from_attribute(line_attribute: String, all_lines: &[Line]) -> Op
         l.code == line_attribute
     }).cloned()
 }
+
+pub fn get_style_value_from_elt(style: &str, key: &str) -> Option<String> {
+    style
+        .split(';')
+        .find_map(|rule| {
+            let mut parts = rule.split(':');
+            let k = parts.next()?.trim();
+            let v = parts.next()?.trim();
+            if k == key {
+                Some(v.to_string())
+            } else {
+                None
+            }
+        })
+}
