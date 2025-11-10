@@ -1,3 +1,3 @@
 pub(crate) mod lines;
 pub(crate) mod stops;
-mod time;
+pub(crate) mod arrivals;

@@ -18,7 +18,8 @@ fn init_router() -> anyhow::Result<Router> {
     let router = Router::new()
         .route("/", get(welcome))
         .nest("/lines", endpoints::lines::router())
-        .nest("/stops", endpoints::stops::router());
+        .nest("/stops", endpoints::stops::router())
+        .nest("/times", endpoints::arrivals::router());
     Ok(router.with_state(state))
 }
 
@@ -26,7 +27,7 @@ fn init_router() -> anyhow::Result<Router> {
 async fn main() {
     let app = init_router().expect("There was an issue while building the app Router.");
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
 
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
