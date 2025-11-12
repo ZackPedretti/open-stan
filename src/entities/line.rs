@@ -26,13 +26,13 @@ impl PartialEq<ArrivalLineInfo> for Line {
 }
 
 // Information about the line for arrivals
-#[derive(Deserialize, Serialize, Clone)]
+#[derive(Serialize, Clone)]
 pub enum ArrivalLineInfo {
     Complete(Line),
     Partial(PartialLineInfo)
 }
 
-#[derive(Deserialize, Serialize, Clone)]
+#[derive(Serialize, Clone)]
 pub struct PartialLineInfo {
     pub number: usize,
     pub color: String,

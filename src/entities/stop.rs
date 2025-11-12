@@ -9,11 +9,7 @@ pub struct Stop {
 }
 
 impl Stop {
-    pub fn get_unique_identifier(&self) -> String {
-        self.id.split(':').last().unwrap().to_string()
-    }
-    
-    pub fn get_unique_identifier_from_str(id: &str) -> String {
+   pub fn get_unique_identifier_from_str(id: &str) -> String {
        id.split(':').last().unwrap().to_string() 
     }
 }

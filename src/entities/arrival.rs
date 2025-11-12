@@ -1,7 +1,7 @@
-use serde::{Deserialize, Serialize};
-use crate::entities::line::{ArrivalLineInfo};
+use crate::entities::line::ArrivalLineInfo;
+use serde::Serialize;
 
-#[derive(Deserialize, Serialize)]
+#[derive(Serialize)]
 pub struct Arrival {
     pub(crate) time: String,
     pub(crate) direction: String,
