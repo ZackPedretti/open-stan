@@ -1,4 +1,5 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, Serializer};
+use serde::ser::SerializeStruct;
 
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone, Eq)]
 pub struct Line {
@@ -26,10 +27,30 @@ impl PartialEq<ArrivalLineInfo> for Line {
 }
 
 // Information about the line for arrivals
-#[derive(Serialize, Clone)]
+#[derive(Clone)]
 pub enum ArrivalLineInfo {
     Complete(Line),
     Partial(PartialLineInfo)
+}
+
+impl Serialize for ArrivalLineInfo {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let mut state = serializer.serialize_struct("ArrivalLineInfo", 1)?;
+
+        match self {
+            ArrivalLineInfo::Complete(l) => {
+                state.serialize_field("line", &l)?;
+            }
+            ArrivalLineInfo::Partial(l) => {
+                state.serialize_field("line", &l)?;
+            }
+        }
+
+        state.end()
+    }
 }
 
 #[derive(Serialize, Clone)]
