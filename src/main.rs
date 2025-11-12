@@ -19,7 +19,7 @@ fn init_router() -> anyhow::Result<Router> {
         .route("/", get(welcome))
         .nest("/lines", endpoints::lines::router())
         .nest("/stops", endpoints::stops::router())
-        .nest("/times", endpoints::arrivals::router());
+        .nest("/arrivals", endpoints::arrivals::router());
     Ok(router.with_state(state))
 }
 

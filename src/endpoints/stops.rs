@@ -7,7 +7,6 @@ use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
-use scraper::{Selector};
 use serde::Deserialize;
 use serde_json::json;
 use std::collections::HashSet;
