@@ -9,8 +9,8 @@ use axum::response::IntoResponse;
 use axum::routing::get;
 use reqwest::{Client, StatusCode};
 use scraper::{ElementRef, Html, Selector};
-use serde::{Deserialize, Serialize};
 use crate::endpoints::lines::request_lines;
+use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::line::{ArrivalLineInfo, PartialLineInfo};
 
 pub fn router() -> Router<ApiState> {
@@ -19,12 +19,6 @@ pub fn router() -> Router<ApiState> {
     router
 }
 
-#[derive(Deserialize, Serialize, Debug)]
-struct GetRemainingTimeToStopQueryArgs {
-    stop: String,
-    line: Option<String>,
-    static_time: Option<bool>,
-}
 
 async fn get_remaining_times_to_stop(
     State(state): State<ApiState>,

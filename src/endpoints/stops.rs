@@ -10,16 +10,13 @@ use reqwest::{Client, StatusCode};
 use serde::Deserialize;
 use serde_json::json;
 use std::collections::HashSet;
+use crate::entities::api_query_args::GetStopOfLineQueryArgs;
 
 pub fn router() -> Router<ApiState> {
     let router: Router<ApiState> = Router::new().route("/", get(get_stops));
     router
 }
 
-#[derive(Deserialize)]
-struct GetStopOfLineQueryArgs {
-    line: Option<String>,
-}
 async fn get_stops(
     Query(query): Query<GetStopOfLineQueryArgs>,
     State(state): State<ApiState>,
