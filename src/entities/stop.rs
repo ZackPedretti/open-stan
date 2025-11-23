@@ -18,16 +18,16 @@ pub struct Coord {
 
 impl Stop {
     /// Returns the unique identifier of a stop from a string
-    /// 
+    ///
     /// For a stop having this ID:
     /// `stop_point:GST:SP:HLGRU1`
-    /// 
+    ///
     /// Its unique identifier is:
     /// `HLGRU1`
-    /// 
+    ///
     /// # Panics
     /// Panics if no identifier was found
-    #[must_use] 
+    #[must_use]
     pub fn get_unique_identifier_from_str(id: &str) -> String {
         id.split(':').next_back().unwrap().to_string()
     }

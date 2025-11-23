@@ -5,18 +5,16 @@ use serde_json::{Map, json};
 use std::num::ParseIntError;
 
 /// Returns the necessary headers to make calls to the STAN API
-/// 
+///
 /// # Panics
-/// Should never panic; it calls .unwrap on a static operation that either never fails 
+/// Should never panic; it calls .unwrap on a static operation that either never fails
 /// or always fails
 #[must_use]
 pub fn get_stan_api_calls_headers() -> HeaderMap {
     let mut headers = HeaderMap::new();
     headers.insert(
         "Content-Type",
-        "application/x-www-form-urlencoded; charset=UTF-8"
-            .parse()
-            .unwrap(),
+        "application/x-www-form-urlencoded; charset=UTF-8".parse().unwrap(),
     );
     headers.insert("X-Requested-With", "XMLHttpRequest".parse().unwrap());
 
@@ -70,7 +68,10 @@ pub async fn request_presigned_navitia_url(
 }
 
 #[must_use]
-pub fn get_line_from_attribute(line_attribute: &str, all_lines: &[Line]) -> Option<Line> {
+pub fn get_line_from_attribute(
+    line_attribute: &str,
+    all_lines: &[Line],
+) -> Option<Line> {
     // If it starts with line:GST: -> line.id
     if line_attribute.starts_with("line:GST:") {
         return all_lines.iter().find(|l| l.id == line_attribute).cloned();
@@ -86,7 +87,10 @@ pub fn get_line_from_attribute(line_attribute: &str, all_lines: &[Line]) -> Opti
 }
 
 #[must_use]
-pub fn get_style_value_from_elt(style: &str, key: &str) -> Option<String> {
+pub fn get_style_value_from_elt(
+    style: &str,
+    key: &str,
+) -> Option<String> {
     style.split(';').find_map(|rule| {
         let mut parts = rule.split(':');
         let k = parts.next()?.trim();

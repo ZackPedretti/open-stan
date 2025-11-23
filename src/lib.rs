@@ -3,24 +3,24 @@
 #![warn(clippy::nursery)]
 #![warn(clippy::cargo)]
 
+use crate::entities::api_doc::ApiDoc;
+use crate::entities::api_state::ApiState;
 use axum::Router;
 use axum::routing::get;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
-use crate::entities::api_doc::ApiDoc;
-use crate::entities::api_state::ApiState;
 
 pub mod endpoints;
 pub mod entities;
-pub mod utils;
 pub mod navitia_token;
+pub mod utils;
 
 pub async fn welcome() -> &'static str {
     "Hello, world!"
 }
 
 /// Creates a rooter for Axum with the correct client configuration, endpoints and state
-/// 
+///
 /// # Errors
 /// Returns an `anyhow::Error` if the Reqwest client could not be built successfully
 pub fn init_router() -> anyhow::Result<Router> {

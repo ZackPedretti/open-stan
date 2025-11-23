@@ -1,5 +1,5 @@
-use serde::{Deserialize, Serialize, Serializer};
 use serde::ser::SerializeStruct;
+use serde::{Deserialize, Serialize, Serializer};
 use utoipa::ToSchema;
 
 #[derive(Deserialize, Serialize, Debug, PartialEq, Clone, Eq, ToSchema)]
@@ -13,16 +13,22 @@ pub struct Line {
 }
 
 impl PartialEq<PartialLineInfo> for Line {
-    fn eq(&self, other: &PartialLineInfo) -> bool {
+    fn eq(
+        &self,
+        other: &PartialLineInfo,
+    ) -> bool {
         self.number == other.number || (self.color == other.color && self.text_color == other.text_color)
     }
 }
 
 impl PartialEq<ArrivalLineInfo> for Line {
-    fn eq(&self, other: &ArrivalLineInfo) -> bool {
+    fn eq(
+        &self,
+        other: &ArrivalLineInfo,
+    ) -> bool {
         match other {
             ArrivalLineInfo::Complete(li) => *self == *li,
-            ArrivalLineInfo::Partial(pli) => *self == *pli
+            ArrivalLineInfo::Partial(pli) => *self == *pli,
         }
     }
 }
@@ -31,11 +37,14 @@ impl PartialEq<ArrivalLineInfo> for Line {
 #[derive(Clone, ToSchema)]
 pub enum ArrivalLineInfo {
     Complete(Line),
-    Partial(PartialLineInfo)
+    Partial(PartialLineInfo),
 }
 
 impl Serialize for ArrivalLineInfo {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    fn serialize<S>(
+        &self,
+        serializer: S,
+    ) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
     {

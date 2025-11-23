@@ -1,8 +1,9 @@
 use crate::endpoints::lines::request_lines;
+use crate::entities::api_query_args::GetStopOfLineQueryArgs;
 use crate::entities::api_state::ApiState;
 use crate::entities::stop::Stop;
-use crate::utils::{request_presigned_navitia_url};
 use crate::navitia_token::create_token;
+use crate::utils::request_presigned_navitia_url;
 use axum::extract::{Query, State};
 use axum::response::IntoResponse;
 use axum::routing::get;
@@ -11,7 +12,6 @@ use reqwest::{Client, StatusCode};
 use serde::Deserialize;
 use serde_json::json;
 use std::collections::HashSet;
-use crate::entities::api_query_args::GetStopOfLineQueryArgs;
 
 pub fn router() -> Router<ApiState> {
     let router: Router<ApiState> = Router::new().route("/", get(get_stops));
@@ -47,7 +47,10 @@ pub async fn get_stops(
     }
 }
 
-async fn get_stops_of_line(line: String, client: &Client) -> anyhow::Result<Vec<Stop>> {
+async fn get_stops_of_line(
+    line: String,
+    client: &Client,
+) -> anyhow::Result<Vec<Stop>> {
     let x_auth_token = create_token();
     let presigned_url = request_presigned_stops_of_line(client, &line, &x_auth_token).await?;
 
@@ -86,7 +89,7 @@ async fn request_presigned_stops_of_line(
         format!("/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas"),
         x_auth_token,
     )
-        .await
+    .await
 }
 
 async fn request_stops_of_line(
@@ -95,9 +98,7 @@ async fn request_stops_of_line(
     client: &Client,
     x_auth_token: &str,
 ) -> anyhow::Result<Vec<Stop>> {
-    let url = format!(
-        "https://api.navitia.io/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas?count=100&depth=3"
-    );
+    let url = format!("https://api.navitia.io/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas?count=100&depth=3");
 
     let json_response: reqwest::Result<StopsResponse> = client
         .post("https://nws-main.hove.io/api/proxy")
@@ -112,9 +113,11 @@ async fn request_stops_of_line(
         .await?
         .json()
         .await;
-        
+
     match json_response {
         Ok(r) => Ok(r.stop_areas),
-        Err(_) => Err(anyhow::anyhow!("Was unable to parse JSON response. Could be due to an error returned by the Navitia API.")),
+        Err(_) => Err(anyhow::anyhow!(
+            "Was unable to parse JSON response. Could be due to an error returned by the Navitia API."
+        )),
     }
 }

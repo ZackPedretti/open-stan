@@ -26,15 +26,8 @@ struct Payload {
 
 impl Payload {
     fn new() -> Self {
-        let iat = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap()
-            .as_secs();
-        Self {
-            client_name: CLIENT_NAME.to_string(),
-            token_id: Uuid::new_v4().to_string(),
-            iat,
-        }
+        let iat = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+        Self { client_name: CLIENT_NAME.to_string(), token_id: Uuid::new_v4().to_string(), iat }
     }
 }
 
@@ -51,9 +44,7 @@ pub(crate) fn create_token() -> String {
     let payload = Payload::new();
     let cipher = Aes256Gcm::new_from_slice(&key).expect("Aes256Gcm::new_from_slice failed");
     let plaintext = serde_json::to_vec(&payload).unwrap();
-    let ciphertext = cipher
-        .encrypt(Nonce::from_slice(&iv), plaintext.as_ref())
-        .unwrap();
+    let ciphertext = cipher.encrypt(Nonce::from_slice(&iv), plaintext.as_ref()).unwrap();
 
     let iv = BASE64_STANDARD.encode(iv);
     let ciphertext = BASE64_STANDARD.encode(ciphertext);

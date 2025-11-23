@@ -24,12 +24,7 @@ pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
 /// # Errors
 /// Returns an `anyhow::Error` if an error happened during requesting or parsing the HTML
 pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
-    let html = client
-        .get("https://www.reseau-stan.com/")
-        .send()
-        .await?
-        .text()
-        .await?;
+    let html = client.get("https://www.reseau-stan.com/").send().await?.text().await?;
 
     let mut lines: Vec<Line> = vec![];
 
