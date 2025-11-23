@@ -46,7 +46,7 @@ fn generate_crypto_key() -> [u8; 32] {
 
 pub(crate) fn create_token() -> String {
     let mut iv = [0u8; 12];
-    rand::thread_rng().fill_bytes(&mut iv);
+    rand::rng().fill_bytes(&mut iv);
     let key = generate_crypto_key();
     let payload = Payload::new();
     let cipher = Aes256Gcm::new_from_slice(&key).expect("Aes256Gcm::new_from_slice failed");
