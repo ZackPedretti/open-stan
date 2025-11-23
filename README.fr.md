@@ -34,4 +34,6 @@ N’hésitez pas à **forker** le dépôt, ouvrir des **issues**, ou soumettre d
 ---
 
 ## 📄 Licence
-[Licence MIT](./LICENSE) – libre d’utilisation, de modification et de partage.
+MIT OR Apache 2.0
+- [Licence MIT](./LICENSE-MIT) – Libre d’utilisation, de modification et de partage.
+- [Licence Apache 2.0](./LICENSE-APACHE) - Licence open-source permissive avec octroi explicite de brevet; Libre d’utilisation, de modification et de partage.

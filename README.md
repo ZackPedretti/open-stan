@@ -36,4 +36,6 @@ Feel free to fork the repo, open issues, or submit pull requests.
 ---
 
 ## 📄 License
-[MIT License](./LICENSE) – free to use, modify, and share.
+MIT OR Apache 2.0
+- [MIT License](./LICENSE-MIT) – Free to use, modify, and share.
+- [Apache 2.0](./LICENSE-APACHE) - Permissive open-source license with explicit patent grant; free to use, modify, and share.
