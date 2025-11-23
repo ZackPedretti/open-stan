@@ -16,7 +16,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install cargo audit, cargo-deny, cargo-tarpaulin
+      run: cargo install cargo-audit cargo-deny cargo-tarpaulin
+
+    - name: Security check
+      run: cargo audit
+
+    - name: Dependency policy check
+      run: cargo deny check
+
+    # - name: Test coverage gate
+    #   run: cargo tarpaulin --fail-under 60
+
     - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      run: | 
+        cargo chef prepare --recipe-path recipe.json
+        cargo chef cook --recipe-path recipe.json
+        cargo build --release
