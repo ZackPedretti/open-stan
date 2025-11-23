@@ -1,7 +1,7 @@
 use crate::endpoints::lines::request_lines;
 use crate::entities::api_state::ApiState;
 use crate::entities::stop::Stop;
-use crate::utils::{request_presigned};
+use crate::utils::{request_presigned_navitia_url};
 use crate::navitia_token::create_token;
 use axum::extract::{Query, State};
 use axum::response::IntoResponse;
@@ -51,7 +51,7 @@ async fn get_stops_of_line(line: String, client: &Client) -> anyhow::Result<Vec<
     let x_auth_token = create_token();
     let presigned_url = request_presigned_stops_of_line(client, &line, &x_auth_token).await?;
 
-    Ok(request_stops_of_line(line, presigned_url, client, &x_auth_token).await?)
+    request_stops_of_line(line, presigned_url, client, &x_auth_token).await
 }
 
 #[derive(Deserialize, Debug)]
@@ -62,7 +62,7 @@ struct StopsResponse {
 async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
     let lines = request_lines(client).await?;
     let x_auth_token = create_token();
-    println!("{}", x_auth_token);
+    println!("{x_auth_token}");
     let mut all_stops: HashSet<Stop> = HashSet::new();
 
     for line in lines {
@@ -81,9 +81,9 @@ async fn request_presigned_stops_of_line(
     line_id: &str,
     x_auth_token: &str,
 ) -> anyhow::Result<String> {
-    request_presigned(
+    request_presigned_navitia_url(
         client,
-        format!("/v1/coverage/fr-ne-nancy/lines/{}/stop_areas", line_id),
+        format!("/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas"),
         x_auth_token,
     )
         .await
@@ -96,8 +96,7 @@ async fn request_stops_of_line(
     x_auth_token: &str,
 ) -> anyhow::Result<Vec<Stop>> {
     let url = format!(
-        "https://api.navitia.io/v1/coverage/fr-ne-nancy/lines/{}/stop_areas?count=100&depth=3",
-        line_id
+        "https://api.navitia.io/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas?count=100&depth=3"
     );
 
     let json_response: reqwest::Result<StopsResponse> = client

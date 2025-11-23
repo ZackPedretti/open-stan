@@ -10,7 +10,6 @@ pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_lines))
 }
 
-
 #[utoipa::path(get, path = "/lines")]
 pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
     match request_lines(&state.client).await {
@@ -19,6 +18,11 @@ pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
     }
 }
 
+/// Fetches the bus lines from the official STAN website (<https://www.reseau-stan.com/>), parses the HTML,
+/// and converts the information into `Line` objects.
+///
+/// # Errors
+/// Returns an `anyhow::Error` if an error happened during requesting or parsing the HTML
 pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
     let html = client
         .get("https://www.reseau-stan.com/")
@@ -30,7 +34,12 @@ pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
     let mut lines: Vec<Line> = vec![];
 
     let document = Html::parse_document(&html);
-    let line_options_selector = Selector::parse("select#form_ligne option").expect("There was a problem with the HTML document.");
+    let line_options_selector = match Selector::parse("select#form_ligne option") {
+        Ok(s) => s,
+        Err(err) => {
+            return Err(anyhow::anyhow!(err.to_string()));
+        }
+    };
 
     for elt in document.select(&line_options_selector) {
         if elt.value().attr("disabled").is_some() {
@@ -39,7 +48,7 @@ pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
 
         let get = |name: &str| elt.value().attr(name).unwrap_or("").to_string();
 
-        let line = Line{
+        let line = Line {
             id: get("data-osmid"),
             number: get("value").parse()?,
             name: get("data-libelle"),
@@ -47,7 +56,7 @@ pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
             color: get("data-backgroundcolor"),
             text_color: get("data-color"),
         };
-        
+
         lines.push(line);
     }
 

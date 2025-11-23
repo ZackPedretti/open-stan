@@ -42,10 +42,10 @@ impl Serialize for ArrivalLineInfo {
         let mut state = serializer.serialize_struct("ArrivalLineInfo", 1)?;
 
         match self {
-            ArrivalLineInfo::Complete(l) => {
+            Self::Complete(l) => {
                 state.serialize_field("line", &l)?;
             }
-            ArrivalLineInfo::Partial(l) => {
+            Self::Partial(l) => {
                 state.serialize_field("line", &l)?;
             }
         }

@@ -1,4 +1,3 @@
-use anyhow::anyhow;
 use crate::entities::api_state::ApiState;
 use crate::entities::stop::Stop;
 use crate::entities::arrival::Arrival;
@@ -50,10 +49,7 @@ async fn request_remaining_times_to_stop(
 
     let all_lines = request_lines(client).await?;
     
-    let specified_line = match line {
-        None => None,
-        Some(l) => {get_line_from_attribute(l, &all_lines)}
-    };
+    let specified_line = line.and_then(|l| get_line_from_attribute(&l, &all_lines));
     
     let document = Html::parse_document(&html_text);
 
@@ -64,20 +60,13 @@ async fn request_remaining_times_to_stop(
     
     for elt in document.select(&time_selector) {
         let line_num = get_line_num_from_elt(&elt).unwrap();
-        let line = match get_line_from_attribute(line_num.clone(), &all_lines) {
-            None => ArrivalLineInfo::Partial(get_partial_line_info_from_elt(&elt)),
-            Some(l) => ArrivalLineInfo::Complete(l)
-        };
-        if let Some(ref spec_line) = specified_line {
-            if *spec_line != line {
+        let line = get_line_from_attribute(&line_num, &all_lines).map_or_else(|| ArrivalLineInfo::Partial(get_partial_line_info_from_elt(&elt)), ArrivalLineInfo::Complete);
+        if let Some(ref spec_line) = specified_line
+            && *spec_line != line {
                 continue;
             }
-        }
-        let direction = get_direction_from_elt(&elt).unwrap_or("No destination was specified.".into());
-        let time_values = match get_arrival_times_from_elt(&elt) {
-            Some(t) => t,
-            None => { return Err(anyhow!("No time was provided by the HTML document. Make sure you entered an existing stop id.")); }
-        };
+        let direction = get_direction_from_elt(&elt).unwrap_or_else(|| "No destination was specified.".into());
+        let time_values = get_arrival_times_from_elt(&elt);
         let is_static_time = get_if_static_time(&elt);
         
         for t in time_values {
@@ -86,7 +75,7 @@ async fn request_remaining_times_to_stop(
                 direction: direction.clone(),
                 static_time: is_static_time,
                 line_info: line.clone(),
-            })
+            });
         }
     }
 
@@ -97,13 +86,10 @@ fn get_direction_from_elt(elt: &ElementRef) -> Option<String> {
     let direction_sub_selector = Selector::parse(".tpsreel-destination span").expect("There was something wrong with the HTML document.");
     let mut elt = elt.select(&direction_sub_selector);
 
-    match elt.next() {
-        None => { None }
-        Some(v) => { Some(v.text().next().unwrap().to_string()) }
-    }
+    elt.next().map(|v| v.text().next().unwrap().to_string())
 }
 
-fn get_arrival_times_from_elt(elt: &ElementRef) -> Option<Vec<String>> {
+fn get_arrival_times_from_elt(elt: &ElementRef) -> Vec<String> {
     let time_sub_selector = Selector::parse(".tpsreel-temps .tpsreel-temps-item").unwrap();
     
     let elts = elt.select(&time_sub_selector);
@@ -111,13 +97,10 @@ fn get_arrival_times_from_elt(elt: &ElementRef) -> Option<Vec<String>> {
     let mut times: Vec<String> = vec![];
     
     for elt in elts {
-        let time = match elt.text().next() {
-            None => "< 1 min".to_string(),
-            Some(t) => t.to_string(),
-        };
+        let time = elt.text().next().map_or_else(|| "< 1 min".to_string(), ToString::to_string);
         times.push(time);
     }
-    Some(times)
+    times
 }
 
 fn get_if_static_time(elt: &ElementRef) -> bool {
@@ -139,7 +122,7 @@ fn get_partial_line_info_from_elt(elt: &ElementRef) -> PartialLineInfo {
     let style = elt.value().attr("style").unwrap_or("");
     PartialLineInfo {
         number: elt.value().attr("id").unwrap_or("").to_string()[9..].parse().unwrap_or(0),
-        color: get_style_value_from_elt(style, "background-color").unwrap_or("".to_string()),
-        text_color: get_style_value_from_elt(style, "color").unwrap_or("".to_string()),
+        color: get_style_value_from_elt(style, "background-color").unwrap_or_default(),
+        text_color: get_style_value_from_elt(style, "color").unwrap_or_default(),
     }
 }

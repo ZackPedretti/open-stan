@@ -30,7 +30,7 @@ impl Payload {
             .duration_since(UNIX_EPOCH)
             .unwrap()
             .as_secs();
-        Payload {
+        Self {
             client_name: CLIENT_NAME.to_string(),
             token_id: Uuid::new_v4().to_string(),
             iat,
@@ -58,5 +58,5 @@ pub(crate) fn create_token() -> String {
     let iv = BASE64_STANDARD.encode(iv);
     let ciphertext = BASE64_STANDARD.encode(ciphertext);
 
-    format!("{}.{}", iv, ciphertext)
+    format!("{iv}.{ciphertext}")
 }

@@ -19,6 +19,10 @@ pub async fn welcome() -> &'static str {
     "Hello, world!"
 }
 
+/// Creates a rooter for Axum with the correct client configuration, endpoints and state
+/// 
+/// # Errors
+/// Returns an `anyhow::Error` if the Reqwest client could not be built successfully
 pub fn init_router() -> anyhow::Result<Router> {
     let client = reqwest::Client::builder()
         .user_agent("Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0")
