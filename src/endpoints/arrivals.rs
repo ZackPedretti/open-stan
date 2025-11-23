@@ -14,13 +14,13 @@ use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::line::{ArrivalLineInfo, PartialLineInfo};
 
 pub fn router() -> Router<ApiState> {
-    let router: Router<ApiState> = Router::new().route("/", get(get_remaining_times_to_stop));
+    let router: Router<ApiState> = Router::new().route("/", get(get_arrivals));
 
     router
 }
 
-
-async fn get_remaining_times_to_stop(
+#[utoipa::path(get, path = "/arrivals")]
+pub async fn get_arrivals(
     State(state): State<ApiState>,
     Query(query): Query<GetRemainingTimeToStopQueryArgs>,
 ) -> impl IntoResponse {

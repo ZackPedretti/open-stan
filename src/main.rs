@@ -1,6 +1,7 @@
 mod endpoints;
 mod entities;
 mod utils;
+mod navitia_token;
 
 async fn welcome() -> &'static str {
     "Hello, world!"
@@ -9,6 +10,9 @@ async fn welcome() -> &'static str {
 use crate::entities::api_state::ApiState;
 use axum::{Router, routing::get};
 use std::net::SocketAddr;
+use utoipa::OpenApi;
+use utoipa_swagger_ui::SwaggerUi;
+use crate::entities::api_doc::ApiDoc;
 
 fn init_router() -> anyhow::Result<Router> {
     let client = reqwest::Client::builder()
@@ -19,7 +23,8 @@ fn init_router() -> anyhow::Result<Router> {
         .route("/", get(welcome))
         .nest("/lines", endpoints::lines::router())
         .nest("/stops", endpoints::stops::router())
-        .nest("/arrivals", endpoints::arrivals::router());
+        .nest("/arrivals", endpoints::arrivals::router())
+        .merge(SwaggerUi::new("/docs").url("/api-docs/openapi.json", ApiDoc::openapi()));
     Ok(router.with_state(state))
 }
 

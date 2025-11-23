@@ -1,7 +1,8 @@
 use serde::{Deserialize, Serialize, Serializer};
 use serde::ser::SerializeStruct;
+use utoipa::ToSchema;
 
-#[derive(Deserialize, Serialize, Debug, PartialEq, Clone, Eq)]
+#[derive(Deserialize, Serialize, Debug, PartialEq, Clone, Eq, ToSchema)]
 pub struct Line {
     pub id: String,
     pub number: usize,
@@ -27,7 +28,7 @@ impl PartialEq<ArrivalLineInfo> for Line {
 }
 
 // Information about the line for arrivals
-#[derive(Clone)]
+#[derive(Clone, ToSchema)]
 pub enum ArrivalLineInfo {
     Complete(Line),
     Partial(PartialLineInfo)
@@ -53,7 +54,7 @@ impl Serialize for ArrivalLineInfo {
     }
 }
 
-#[derive(Serialize, Clone)]
+#[derive(Serialize, Clone, ToSchema)]
 pub struct PartialLineInfo {
     pub number: usize,
     pub color: String,

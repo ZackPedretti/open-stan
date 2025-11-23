@@ -12,9 +12,11 @@ pub fn get_stan_api_calls_headers() -> HeaderMap {
     headers
 }
 
-pub async fn request_presigned(client: &Client, url: String) -> anyhow::Result<String> {
+pub async fn request_presigned(client: &Client, url: String, x_auth_token: &str) -> anyhow::Result<String> {
     let json_response: Map<String, serde_json::Value> = client
         .post("https://nws-main.hove.io/api/presign")
+        .header("origin", "https://nws-main.hove.io")
+        .header("X-Auth", x_auth_token)
         .json(&json!({
             "method": "POST",
             "path": url,
@@ -67,3 +69,4 @@ pub fn get_style_value_from_elt(style: &str, key: &str) -> Option<String> {
             }
         })
 }
+

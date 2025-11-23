@@ -1,7 +1,8 @@
 use crate::entities::line::ArrivalLineInfo;
 use serde::Serialize;
+use utoipa::ToSchema;
 
-#[derive(Serialize)]
+#[derive(Serialize, ToSchema)]
 pub struct Arrival {
     pub(crate) time: String,
     pub(crate) direction: String,

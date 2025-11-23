@@ -10,8 +10,37 @@ post {
   auth: inherit
 }
 
+headers {
+  accept: */*
+  accept-encoding: gzip, deflate, br, zstd
+  accept-language: fr-FR,fr;q=0.8
+  content-length: 104
+  content-type: application/json
+  origin: https://nws-main.hove.io
+  priority: u=1, i
+  referer: https://nws-main.hove.io/full/schedules/stan
+  sec-ch-ua: "Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "Windows"
+  sec-fetch-dest: empty
+  sec-fetch-mode: cors
+  sec-fetch-site: same-origin
+  sec-fetch-storage-access: none
+  sec-gpc: 1
+  user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+  x-auth: XWYat+FwcGIQq+Iu.Bxnv3w7mDw9P2vqsxjWt3+jGroL+czJqVtNMoexAPei06lazeiXJothVHHHkroWXSU5XMc0PD3dTmkQLpXZkoQkQ1gUew+GAuMP23eMQkIN2I7er9kys/J/aFsCvfILDrJ4efnteqA==
+}
+
 body:json {
-  {"method":"POST","path":"/v1/coverage/fr-ne-nancy/lines/line:GST:1-97","query":{"disable_geojson":"true","count":"100","filter":"physical_mode.id=physical_mode:Bus"},"clientName":"stan"}
+  {
+    "method": "POST",
+    "path": "/v1/coverage/fr-ne-nancy/lines/line:GST:1-97",
+    "query": {
+      "count": "100",
+      "depth": "3"
+    },
+    "clientName": "stan"
+  }
 }
 
 settings {

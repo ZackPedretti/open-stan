@@ -7,10 +7,12 @@ use reqwest::{Client, StatusCode};
 use scraper::{Html, Selector};
 
 pub fn router() -> Router<ApiState> {
-    Router::new().route("/", get(get_all_lanes))
+    Router::new().route("/", get(get_lines))
 }
 
-async fn get_all_lanes(State(state): State<ApiState>) -> impl IntoResponse {
+
+#[utoipa::path(get, path = "/lines")]
+pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
     match request_lines(&state.client).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
