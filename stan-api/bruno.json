@@ -1,9 +1,0 @@
-{
-  "version": "1",
-  "name": "stan-api",
-  "type": "collection",
-  "ignore": [
-    "node_modules",
-    ".git"
-  ]
-}
