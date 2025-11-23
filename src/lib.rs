@@ -1,3 +1,8 @@
+#![warn(clippy::all)]
+#![warn(clippy::pedantic)]
+#![warn(clippy::nursery)]
+#![warn(clippy::cargo)]
+
 use axum::Router;
 use axum::routing::get;
 use utoipa::OpenApi;
