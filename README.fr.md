@@ -15,7 +15,7 @@ Ce projet a pour objectif de fournir une **API simple, accessible et communautai
 
 ## 🧰 Stack Technique
 - **Backend :** Rust + Axum
-- **Source de données :** [APIs officielles du réseau STAN](https://www.reseau-stan.com)
+- **Source de données :** [API officielle du réseau STAN](https://www.reseau-stan.com) et [API Nativia](https://nws-main.hove.io/full/schedules/stan) (aussi officiellement utilisée sur le site web du réseau STAN)
 - **Licence :** MIT
 
 ---
