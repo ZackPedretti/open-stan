@@ -1,1733 +1,265 @@
-<html dir="ltr" lang="fr-fr">
-<head>
-
-    <meta charset="utf-8">
-    <!-- 
-        Réalisation koredge | https://www.koredge.fr
-    
-        This website is powered by TYPO3 - inspiring people to share!
-        TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
-        TYPO3 is copyright 1998-2025 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
-        Information and contribution at https://typo3.org/
-    -->
-
-
-    <link rel="shortcut icon"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/icons/favicon.ico"
-          type="image/x-icon">
-    <title>STAN, réseau de transport de l'agglomération nancéienne. - Stan</title>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="generator" content="TYPO3 CMS">
-    <meta name="description"
-          content="STAN, réseau de transport de l'agglomération nancéienne. Recherche d'itinéraires, e-boutique, horaires en temps réel, horaires aux arrêts, info trafic, tarifs.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index,follow">
-    <meta property="og:description"
-          content="STAN, réseau de transport de l'agglomération nancéienne. Recherche d'itinéraires, e-boutique, horaires en temps réel, horaires aux arrêts, info trafic, tarifs.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.reseau-stan.com/">
-    <meta property="og:title" content="Accueil">
-    <meta property="og:site_name" content="Stan">
-    <meta property="og:image"
-          content="https://www.reseau-stan.com/fileadmin/_processed_/6/5/csm_LOGO%402x_7cb56da2cc.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="smartbanner:title" content="Application STAN">
-    <meta name="smartbanner:author" content="Keolis Grand Nancy">
-    <meta name="smartbanner:price" content="Gratuit">
-    <meta name="smartbanner:price-suffix-apple" content="&amp;nbsp;- sur App Store">
-    <meta name="smartbanner:price-suffix-google" content="&amp;nbsp;- sur Google play">
-    <meta name="smartbanner:icon-apple" content="https://www.reseau-stan.com/fileadmin/user_upload/store-icon.png">
-    <meta name="smartbanner:icon-google" content="https://www.reseau-stan.com/fileadmin/user_upload/store-icon.png">
-    <meta name="smartbanner:button" content="VOIR">
-    <meta name="smartbanner:button-url-apple" content="https://apps.apple.com/us/app/stan/id521182500?l=fr&amp;ls=1">
-    <meta name="smartbanner:button-url-google"
-          content="https://play.google.com/store/apps/details?id=fr.cityway.android.stan">
-    <meta name="smartbanner:enabled-platforms" content="android,ios">
-    <meta name="smartbanner:close-label" content="Fermer">
-
-
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/powermail/Resources/Public/Css/Basic.css?1637146349"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500&amp;display=swap" media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/bootstrap/bootstrap.min.css?1550069270"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/fancybox/jquery.fancybox.min.css?1554371314"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/css/jquery-ui.min.css?1561483004"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/notiny/notiny.min.css?1555341968"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/smartbannerjs/smartbanner.min.css?1625652915"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/css/app.min.css?1737998951"
-          media="all">
-    <link rel="stylesheet" type="text/css"
-          href="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/css/surcharge.css?1738595339"
-          media="all">
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="dns-prefetch" href="//tarteaucitron.io">
-    <link rel="dns-prefetch" href="//cdn.koredge.website">
-    <meta name="google-site-verification" content="E4nAK2ZihVspogzsL4zyBC_4YirR39zr87XWFwDQqXA">
-    <link rel="stylesheet" href="https://cdn.koredge.website/tarteaucitron/tarteaucitron.min.css">
-    <script src="https://tarteaucitron.io/load.js?domain=www.reseau-stan.com&amp;uuid=0ac3ab798e52de117086134aa427e2f08b782717"></script>
-    <style>
-        :root {
-            --kg-tarteaucitron-background-color: #FFF;
-            --kg-tarteaucitron-color: #000;
-            --kg-tarteaucitron-title-color: #00B7CC;
-            --kg-tarteaucitron-button-font-size: 14px;
-            --kg-tarteaucitron-button-background: #00B7CC;
-            --kg-tarteaucitron-button-background-hover: #4A0072;
-            --kg-tarteaucitron-button-color: #FFF;
-            --kg-tarteaucitron-button-color-hover: #FFF;
-            --kg-tarteaucitron-button-border-color: #00B7CC;
-        }
-
-        div#tarteaucitronAlertBig button#tarteaucitronPrivacyUrl {
-            display: none !important;
-        }
-    </style>
-
-
-    <link rel="canonical" href="https://www.reseau-stan.com/">
-
-
-</head>
-<body id="page-1" class="a11y" cz-shortcut-listen="true">
-
-
-<a class="kg-skip-link" href="#site-main">Aller au contenu</a>
-<div class="bg">
-    <header role="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-4 col-sm-3 col-lg-2">
-
-
-                    <div class="divh1"><a class="logo" href="/"><h1 class="sr-only">STAN, réseau de transport de
-                        l'agglomération nancéienne.</h1></a></div>
-
-
-                </div>
-                <div class="col-8 col-sm-9 col-lg-10 p-0">
-                    <div class="tools">
-                        <div class="left">
-                            <ul class="reseaux_appli">
-                                <li><a class="telecharger_appli" href="/telecharger-lapplication"><i class="icon-mobile"
-                                                                                                     aria-hidden="true"></i><span>Téléchargez l'application</span></a>
-                                </li>
-                                <li><a href="https://www.facebook.com/reseaustanofficiel"
-                                       title="Suivez-nous sur facebook" target="_blank" class="facebook">
-                                    <i class="icon-Shape" aria-hidden="true"></i>
-                                    <span class="sr-only"></span>
-                                </a>
-                                </li>
-                                <li><a href="https://twitter.com/reseaustan" title="Suivez-nous sur twitter"
-                                       target="_blank" class="twitter">
-                                    <i class="icon-twitter" aria-hidden="true"></i>
-                                    <span class="sr-only"></span>
-                                </a>
-                                </li>
-                                <li><a href="https://www.instagram.com/reseaustanofficiel"
-                                       title="Suivez-nous sur twitter" target="_blank" class="twitter">
-                                    <i class="icon-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only"></span>
-                                </a>
-                                </li>
-                                <li><a href="https://www.youtube.com/channel/UCdpuNpam_ABBc_wsEocjNBA"
-                                       title="Suivez-nous sur twitter" target="_blank" class="twitter">
-                                    <i class="icon-youtube" aria-hidden="true"></i>
-                                    <span class="sr-only"></span>
-                                </a>
-                                </li>
-                                <li><a href="https://www.linkedin.com/company/keolis-grandnancy"
-                                       title="Suivez-nous sur twitter" target="_blank" class="twitter">
-                                    <i class="icon-linkedin" aria-hidden="true"></i>
-                                    <span class="sr-only"></span>
-                                </a>
-                                </li>
-                            </ul>
-
-
-                            <form class="accessibilite_contraste_form" method="GET">
-                                <label for="accessibilite_contraste" class="sr-only">Sélecteur pour modifier le
-                                    contraste du site internet</label>
-                                <select id="accessibilite_contraste" name="contraste" class="accessibilite_contraste">
-                                    <option value="1" selected="">Contraste normal</option>
-                                    <option value="2">Contraste élevé</option>
-                                </select>
-                                <button class="accessibilite_contraste_button" type="submit">OK</button>
-                            </form>
-
-
-                        </div>
-                        <div class="right">
-                            <div class="tabsContainer">
-                                <ul class="tabrow">
-                                    <li class="rose"><a href="/le-reseau-stan/stan-et-vous/je-prends-rdv"><i
-                                            class="icon-calendar" aria-hidden="true"></i> Je prends RDV</a></li>
-                                    <li><a href="https://resago.app.ridewithvia.com" target="_blank">
-                                        <i class="icon-car_resa" aria-hidden="true"></i> Je réserve mon voyage</a>
-                                    </li>
-
-
-                                    <li class="violet"><a href="/mon-compte"><i class="icon-user"
-                                                                                aria-hidden="true"></i> Mon compte</a>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                            <a class="btn_mobile_prendrerdv" title="Je prends RDV"
-                               href="/le-reseau-stan/stan-et-vous/je-prends-rdv"><i class="icon-calendar"
-                                                                                    aria-hidden="true"></i></a>
-                            <a href="https://resago.app.ridewithvia.com" target="_blank" title="Je réserve mon voyage"
-                               class="btn_mobile_jereserve"><i class="icon-car_resa" aria-hidden="true"></i></a>
-                            <a class="btn_mobile_moncompte" title="Mon compte" href="/mon-compte"><i class="icon-user"
-                                                                                                     aria-hidden="true"></i></a>
-                            <a role="button" href="javascript:void(0)" title="Rechercher" class="chercher search-event">
-                                <span class="icon-search"></span>
-                                <span class="sr-only">Rechercher</span>
-                            </a>
-                            <div class="btn_menu">
-                                <div class="picto_menu"><span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <nav role="navigation" class="menu">
-                        <ul class="deroulant">
-                            <li class="li-nav-link"><a href="/se-deplacer/horaires/horaires-a-larret" class="nav-link">Se
-                                déplacer</a>
-                                <div class="sub">
-                                    <div class="container"><a href="#" class="sub-header">Se dÃ©placer</a>
-                                        <div class="row">
-                                            <div class="col_sub col-3 actif"><a class="sub-link"
-                                                                                href="/se-deplacer/horaires"><span
-                                                    class="titre">Horaires</span></a>
-                                                <ul>
-                                                    <li><a href="/se-deplacer/horaires/horaires-a-larret">Horaires à
-                                                        l'arrêt</a></li>
-                                                    <li><a href="/se-deplacer/horaires/fiches-horaires-des-lignes-1">Fiches
-                                                        horaires des lignes</a></li>
-                                                    <li><a href="/se-deplacer/horaires-en-temps-reel">Horaires en temps
-                                                        réel</a></li>
-                                                    <li>
-                                                        <a href="https://www.reseau-stan.com/fileadmin/user_upload/Horaires/qrcode_site_internet_aout2025.pdf"
-                                                           target="_blank">Télécharger les codes arrêts</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/itineraire-plans"><span
-                                                    class="titre">Itinéraire &amp; plans</span></a>
-                                                <ul>
-                                                    <li><a href="/se-deplacer/itineraire/calcul-ditineraire">Calcul
-                                                        d'itinéraire</a></li>
-                                                    <li><a href="/se-deplacer/itineraire-plans/plans-du-reseau">Plans du
-                                                        réseau</a></li>
-                                                    <li><a href="/se-deplacer/itineraire-plans/plan-b">Plan B</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/infos-trafic"><span
-                                                    class="titre">Infos trafic</span></a>
-                                                <ul>
-                                                    <li><a href="/se-deplacer/infos-trafic/perturbations-programmees">Perturbations
-                                                        programmées</a></li>
-                                                    <li><a href="/se-deplacer/infos-trafic/twitter-linfo-en-temps-reel">Info
-                                                        en temps réel</a></li>
-                                                    <li><a href="/se-deplacer/infos-trafic/recevoir-les-infos-trafic">Recevoir
-                                                        les infos trafic</a></li>
-                                                    <li><a href="/se-deplacer/pic-de-pollution">Pic de pollution</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/lintermodalite"><span
-                                                    class="titre">L’intermodalité</span></a>
-                                                <ul>
-                                                    <li><a href="/se-deplacer/lintermodalite/parkings-relais">Parkings
-                                                        relais - Mode d'emploi</a></li>
-                                                    <li><a href="/se-deplacer/lintermodalite/parkings-relais-1">Parkings
-                                                        relais - Où les trouver ?</a></li>
-                                                    <li><a href="/se-deplacer/lintermodalite/ter">TER Fluo Grand Est</a>
-                                                    </li>
-                                                    <li><a href="/se-deplacer/lintermodalite/velo">Se déplacer à
-                                                        vélo</a></li>
-                                                    <li><a href="/se-deplacer/lintermodalite/auto-partage">Citiz :
-                                                        service d'auto-partage</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/lintermodalite/mobicoop-covoitureurs-stan">MOBICOOP
-                                                            - Covoitureurs Stan</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/loffre-de-transport"><span
-                                                    class="titre">L’offre de transport</span></a>
-                                                <ul>
-                                                    <li><a href="/le-reseau-stan/lancement-ligne-t1">La ligne T1</a>
-                                                    </li>
-                                                    <li><a href="/loffre-de-transport/reseau-bus-et-trolley">Réseau bus
-                                                        et Trolley</a></li>
-                                                    <li><a href="/loffre-de-transport/gratuite">Gratuité</a></li>
-                                                    <li>
-                                                        <a href="https://www.reseau-stan.com/se-deplacer/transport-a-la-demande/resago-matin-mode-demploi">Résago
-                                                            Matin</a></li>
-                                                    <li><a href="/offre-de-nuit">Offre de nuit</a></li>
-                                                    <li><a href="/loffre-de-transport/citadines">Citadines</a></li>
-                                                    <li>
-                                                        <a href="/loffre-de-transport/desserte-des-etablissements-scolaires">Desserte
-                                                            des établissements scolaires</a></li>
-                                                    <li><a href="/se-deplacer/accessibilite/mode-demploi">Mode
-                                                        d'emploi</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/navettes-spectacles-et-matchs"><span
-                                                    class="titre">Navettes spectacles et matchs</span></a>
-                                                <ul>
-                                                    <li><a href="/loffre-de-transport/navette-loisirs/navettes-zenith">Navettes
-                                                        Zénith</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/navettes-spectacles-et-matchs/navettes-asnl">Navettes
-                                                            ASNL</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/navettes-spectacles-et-matchs/navettes-sluc">Navettes
-                                                            SLUC</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/transport-a-la-demande"><span
-                                                    class="titre">Transports à la demande</span></a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="/se-deplacer/transport-a-la-demande/resago-dimanche-mode-demploi">Résago
-                                                            Dimanche - Mode d'emploi</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/transport-a-la-demande/resago-matin-mode-demploi">Résago
-                                                            Matin - Mode d'emploi</a></li>
-                                                    <li><a href="/se-deplacer/transport-a-la-demande/resago-1-2-et-3">Résago
-                                                        1, 2, 3 et 4</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/transport-a-la-demande/cgv-et-politique-de-confidentialite-resago">CGV
-                                                            et Politique de Confidentialité Résago</a></li>
-                                                    <li><a href="https://resago.app.ridewithvia.com/">Je réserve</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/se-deplacer/accessibilite"><span
-                                                    class="titre">Accessibilité</span></a>
-                                                <ul>
-                                                    <li><a href="/se-deplacer/accessibilite/un-reseau-amenage">Un réseau
-                                                        aménagé</a></li>
-                                                    <li><a href="/se-deplacer/accessibilite/arrets-amenages-pmr">Arrêts
-                                                        aménagés PMR</a></li>
-                                                    <li><a href="/loffre-de-transport/handistan">Handistan</a></li>
-                                                    <li><a href="/se-deplacer/accessibilite/stan-me-guide">Stan me
-                                                        guide</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/accessibilite/telecommande-phitech-infos-sonores-aux-arrets">Télécommande
-                                                            Phitech (infos sonores aux arrêts)</a></li>
-                                                    <li>
-                                                        <a href="/se-deplacer/accessibilite/accessibilite-du-site-internet">Accessibilité
-                                                            du site internet</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="li-nav-link"><a href="/titres-tarifs/tous-les-titres" class="nav-link">Titres
-                                &amp; tarifs</a>
-                                <div class="sub">
-                                    <div class="container"><a href="#" class="sub-header">Se dÃ©placer</a>
-                                        <div class="row">
-                                            <div class="col_sub col-3 actif"><a class="sub-link"
-                                                                                href="/titres-tarifs/mode-demploi"><span
-                                                    class="titre">Mode d’emploi</span></a>
-                                                <ul>
-                                                    <li><a href="/titres-tarifs/mode-demploi/les-reseaux">Les
-                                                        réseaux</a></li>
-                                                    <li>
-                                                        <a href="https://www.reseau-stan.com/loffre-de-transport/gratuite">Gratuité</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/titres-tarifs/mode-demploi/prise-en-charge-par-lemployeur">Prise
-                                                            en charge par l'employeur</a></li>
-                                                    <li>
-                                                        <a href="/titres-tarifs/mode-demploi/supports-pour-les-titres-de-transport">Les
-                                                            supports pour les titres de transport</a></li>
-                                                    <li><a href="/titres-tarifs/mode-demploi/les-types-de-titres">Les
-                                                        types de titres</a></li>
-                                                    <li><a href="/titres-tarifs/mode-demploi/la-validation-1">La
-                                                        validation</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a href="/titres-tarifs/tous-les-titres"><span
-                                                    class="titre">Tarifs au 1er Août 2025</span></a></div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/titres-tarifs/points-de-vente"><span
-                                                    class="titre">Points de vente</span></a>
-                                                <ul>
-                                                    <li><a href="/titres-tarifs/points-de-vente/ou-acheter-son-titre-1">Où
-                                                        acheter son titre ?</a></li>
-                                                    <li><a href="/titres-tarifs/points-de-vente/ou-acheter-son-titre">Les
-                                                        commerçants partenaires</a></li>
-                                                    <li><a href="/e-boutique/accueil">E-boutique</a></li>
-                                                    <li><a href="/titres-tarifs/points-de-vente/espace-info-mobilites">Espace
-                                                        Info Mobilités</a></li>
-                                                    <li><a href="/titres-tarifs/points-de-vente/a-bord">À bord</a></li>
-                                                    <li><a href="/titres-tarifs/points-de-vente/nemo-mticket">NéMO (ex
-                                                        MyBus)</a></li>
-                                                    <li>
-                                                        <a href="/titres-tarifs/points-de-vente/distributeurs-automatiques-de-titres">Distributeurs
-                                                            automatiques de titres</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/titres-tarifs/amendes"><span
-                                                    class="titre">Amendes</span></a>
-                                                <ul>
-                                                    <li><a href="/titres-tarifs/amendes/tarifs">Tarifs</a></li>
-                                                    <li><a href="/titres-tarifs/amendes/comment-regler-mon-amende">Où et
-                                                        comment régler mon amende</a></li>
-                                                    <li><a href="/titres-tarifs/amendes/regler-mon-amende-en-ligne">Régler
-                                                        mon amende en ligne</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="li-nav-link"><a href="/le-reseau-stan/acteurs-et-missions/keolis-grand-nancy"
-                                                       class="nav-link">Le réseau STAN</a>
-                                <div class="sub">
-                                    <div class="container"><a href="#" class="sub-header">Se dÃ©placer</a>
-                                        <div class="row">
-                                            <div class="col_sub col-3 actif"><a class="sub-link"
-                                                                                href="/le-reseau-stan/acteurs-et-missions"><span
-                                                    class="titre">Acteurs et missions</span></a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="/le-reseau-stan/acteurs-et-missions/keolis-grand-nancy">Keolis
-                                                            Grand Nancy - L'entreprise</a></li>
-                                                    <li>
-                                                        <a href="/le-reseau-stan/acteurs-et-missions/keolis-grand-nancy-les-metiers">Keolis
-                                                            Grand Nancy - Les métiers</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/espace-emploi">Espace
-                                                        Emploi</a></li>
-                                                    <li><a href="/le-reseau-stan/acteurs-et-missions/espace-presse">Espace
-                                                        Presse</a></li>
-                                                    <li><a href="https://www.grandnancy.eu/accueil/">Métropole du Grand
-                                                        Nancy</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/le-reseau-stan/stan-et-vous"><span
-                                                    class="titre">Stan et vous</span></a>
-                                                <ul>
-                                                    <li><a href="/le-reseau-stan/prix-metropolitain-du-reseau-stan">Prix
-                                                        Métropolitain</a></li>
-                                                    <li>
-                                                        <a href="/le-reseau-stan/stan-et-vous/la-newsletter-du-reseau-stan">La
-                                                            newsletter du réseau Stan</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/a-votre-ecoute">A votre
-                                                        écoute</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/actualites">Actualités</a>
-                                                    </li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/les-tutos-stan">Les tutos
-                                                        Stan</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/documents-a-telecharger">Documents
-                                                        à télécharger</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/faq">FAQ</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/devenez-paneliste">Devenez
-                                                        panéliste</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col_sub col-3"><a class="sub-link"
-                                                                          href="/outils-et-services"><span
-                                                    class="titre">Outils et services</span></a>
-                                                <ul>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/je-prends-rdv">Je prends
-                                                        RDV</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/club-fidelite-stan">Club
-                                                        Fidélité Stan</a></li>
-                                                    <li><a href="/le-reseau-stan/stan-et-vous/lagence-virtuelle">L'agence
-                                                        virtuelle</a></li>
-                                                    <li><a href="/outils-et-services/objets-perdus/trouves">Objets
-                                                        perdus/trouvés</a></li>
-                                                    <li>
-                                                        <a href="/le-reseau-stan/stan-et-vous/actualites/envie-de-lecture">Envie
-                                                            de lecture ?</a></li>
-                                                    <li>
-                                                        <a href="/le-reseau-stan/stan-et-vous/retrait-de-produits-fermiers-dans-votre-p-r-nouveau">Retrait
-                                                            de produits fermiers et locaux</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li><a href="/le-reseau-stan/stan-et-vous/a-votre-ecoute">Contact</a></li>
-                            <li><a href="/e-boutique/accueil">Boutique</a></li>
-                            <li class="events"><a href="/le-reseau-stan/prix-metropolitain-du-reseau-stan"
-                                                  target="_top">Prix métropolitain</a></li>
-                        </ul>
-                        <ul class="reseaux_appli reseaux_appli_mobile">
-                            <li><a href="https://www.facebook.com/reseaustanofficiel" title="Suivez-nous sur facebook"
-                                   target="_blank" class="facebook"><i class="icon-Shape" aria-hidden="true"></i></a>
-                            </li>
-                            <li><a href="https://twitter.com/reseaustan" title="Suivez-nous sur twitter" target="_blank"
-                                   class="twitter"><i class="icon-twitter" aria-hidden="true"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div id="infosTrafic" class="info_trafic"
-         data-url="https://www.reseau-stan.com/?tx_kggestioncontenus_kggestioncontenus%5Baction%5D=ajax&amp;tx_kggestioncontenus_kggestioncontenus%5Bcontroller%5D=Ecran&amp;type=476&amp;cHash=f371913a7243f9a1449f5717d5f5ddc9">
-        <button type="button" id="info_trafic_onglet" class="onglet kg-button-reset" aria-expanded="false"
-                aria-controls="infosTrafic-panel">
-            <span class="onglet-tirett">infos trafic</span>
-        </button>
-        <div id="infosTrafic-panel" hidden="" aria-hidden="true" class="overflow">
-            <ul class="categories" role="tablist" aria-label="Temps réel, twitter et s'abonner">
-
-                <li class="li-btn-filter filter-infosTempsReel active">
-                    <a class="btn-filter" data-filter="infosTempsReel" aria-selected="true"
-                       aria-controls="infosTempsReel" role="tab" href="javascript:void(0)">Perturbations programmées</a>
-                </li>
-                <li class="li-btn-filter filter-infosTwitter">
-                    <a class="btn-filter" data-filter="infosTwitter" aria-selected="false" aria-controls="infosTwitter"
-                       role="tab" href="javascript:void(0)"><i class="icon-twitter" aria-hidden="true"></i> Info en
-                        temps réel</a>
-                </li>
-                <li class="li-btn-filter filter-sabonner">
-                    <a class="btn-filter" data-filter="infosSabonner" aria-selected="false"
-                       aria-controls="infosSabonner" role="tab" href="javascript:void(0)">Recevoir les infos</a>
-                </li>
-            </ul>
-            <div class="stanalertes custom-scroll">
-                <div class="stanalertes-content">
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <main role="main" id="site-main">
-
-        <a id="c1244"></a>
-        <section class="wrapper-section-transit">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-3"></div>
-                    <div class="col-12 col-lg-6">
-                        <div class="search_form_home"></div>
-                    </div>
-                    <div class="col-12 col-lg-3"></div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-4">
-                        <div class="form-box horaire_tps_reel active" data-isarretenfav="" data-islogged="">
-                            <h2 class="titre widget-event"><i class="icon-time" aria-hidden="true"></i>Prochains
-                                passages</h2>
-                            <div class="form-content">
-                                <div class="wrapper-selects">
-                                    <form method="post" id="horairestpsreel-form"
-                                          action="/?tx_kggestioncontenus_kggestioncontenus%5Baction%5D=ajax&amp;tx_kggestioncontenus_kggestioncontenus%5Bcontroller%5D=Ecran&amp;type=476&amp;cHash=f371913a7243f9a1449f5717d5f5ddc9">
-                                        <div>
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][@extension]"
-                                                   value="KgGestioncontenus">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][@vendor]"
-                                                   value="Koredge">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][@controller]"
-                                                   value="Ecran">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][@action]"
-                                                   value="homewidgets">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][arguments]"
-                                                   value="YTowOnt96dbbaaef1f2a8f15ccbe084391221740524906cd">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__referrer][@request]"
-                                                   value="a:4:{s:10:&quot;@extension&quot;;s:17:&quot;KgGestioncontenus&quot;;s:11:&quot;@controller&quot;;s:5:&quot;Ecran&quot;;s:7:&quot;@action&quot;;s:11:&quot;homewidgets&quot;;s:7:&quot;@vendor&quot;;s:7:&quot;Koredge&quot;;}ace6c50559aaab7f7195627aeb45379a7f9ad7bf">
-                                            <input type="hidden"
-                                                   name="tx_kggestioncontenus_kggestioncontenus[__trustedProperties]"
-                                                   value="a:0:{}914f42f9c1f56d5256292001abf850666a544473">
-                                        </div>
-
-                                        <label for="form_ligne-button"><span class="label">Ma ligne :</span>
-                                            <span class="select">
-                    <select id="form_ligne" name="ligne" required="required" style="display: none;">
-                        <option disabled="" selected="">
-                            Sélectionnez une ligne
-                        </option>
-
-                        
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#E30613" data-ligne="2484"
-                                        data-numlignepublic="T1" data-osmid="line:GST:1-97"
-                                        data-libelle="Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré" value="2484">T1. Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#0000FF" data-ligne="2330"
-                                        data-numlignepublic="T2" data-osmid="line:GST:2-97"
-                                        data-libelle="Laxou Sapinière - Laneuveville Centre" value="2330">T2. Laxou Sapinière - Laneuveville Centre</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#008080" data-ligne="2331"
-                                        data-numlignepublic="T3" data-osmid="line:GST:3-97"
-                                        data-libelle="Villers Campus Sciences  - Seichamps Haie Cerlin" value="2331">T3. Villers Campus Sciences  - Seichamps Haie Cerlin</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#FFDD04" data-ligne="2332"
-                                        data-numlignepublic="T4" data-osmid="line:GST:4-97"
-                                        data-libelle="Laxou Champ-le-Boeuf - Houdemont Porte Sud" value="2332">T4. Laxou Champ-le-Boeuf - Houdemont Porte Sud</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#421782" data-ligne="2523"
-                                        data-numlignepublic="T5" data-osmid="line:GST:5-97"
-                                        data-libelle="Maxéville Meurthe Canal - Vandoeuvre Roberval" value="2523">T5. Maxéville Meurthe Canal - Vandoeuvre Roberval</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#83171A" data-ligne="2530"
-                                        data-numlignepublic="Corol" data-osmid="line:GST:7"
-                                        data-libelle="Laxou Plateau de Haye - Laxou Plateau de Haye" value="2530">Corol. Laxou Plateau de Haye - Laxou Plateau de Haye</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#009999" data-ligne="2446"
-                                        data-numlignepublic="10" data-osmid="line:SUB:10"
-                                        data-libelle="Pompey Parc Eiffel - Nancy Place Carnot" value="2446">10. Pompey Parc Eiffel - Nancy Place Carnot</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#FF7900" data-ligne="2335"
-                                        data-numlignepublic="11" data-osmid="line:GST:11-97"
-                                        data-libelle="Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde"
-                                        value="2335">11. Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#99C225" data-ligne="2336"
-                                        data-numlignepublic="12" data-osmid="line:GST:12-97"
-                                        data-libelle="Malzéville - Heillecourt" value="2336">12. Malzéville - Heillecourt</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#33543C" data-ligne="2337"
-                                        data-numlignepublic="13" data-osmid="line:GST:13-97"
-                                        data-libelle="Maxéville ZA Saint-Jacques - Dommartemont" value="2337">13. Maxéville ZA Saint-Jacques - Dommartemont</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#229E6B" data-ligne="2338"
-                                        data-numlignepublic="14" data-osmid="line:GST:14-97"
-                                        data-libelle="Nancy Gare-République - Ludres" value="2338">14. Nancy Gare-République - Ludres</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#70C7D2" data-ligne="2339"
-                                        data-numlignepublic="15" data-osmid="line:GST:15-97"
-                                        data-libelle="Nancy Gare-République - Seichamps Ecoquartier" value="2339">15. Nancy Gare-République - Seichamps Ecoquartier</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#1F94CB" data-ligne="2340"
-                                        data-numlignepublic="16" data-osmid="line:GST:16-97"
-                                        data-libelle="Malzéville - Malzéville Pixerécourt - Villers Clairlieu"
-                                        value="2340">16. Malzéville - Malzéville Pixerécourt - Villers Clairlieu</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#3A5C88" data-ligne="2341"
-                                        data-numlignepublic="17" data-osmid="line:GST:17-97"
-                                        data-libelle="Villers Campus Sciences - Ludres Marvingt" value="2341">17. Villers Campus Sciences - Ludres Marvingt</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#000000" data-ligne="2521"
-                                        data-numlignepublic="18" data-osmid="line:SUB:18"
-                                        data-libelle="Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République"
-                                        value="2521">18. Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#593C90" data-ligne="2342"
-                                        data-numlignepublic="20" data-osmid="line:GST:20-97"
-                                        data-libelle="Nancy Gare-République - Art-sur-Meurthe" value="2342">20. Nancy Gare-République - Art-sur-Meurthe</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#963B8E" data-ligne="2343"
-                                        data-numlignepublic="21" data-osmid="line:GST:21-97"
-                                        data-libelle="Nancy Gare-République - Fléville - Ludres Marvingt" value="2343">21. Nancy Gare-République - Fléville - Ludres Marvingt</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#D2378C" data-ligne="2344"
-                                        data-numlignepublic="22" data-osmid="line:GST:22-97"
-                                        data-libelle="Saint-Max Gérard Barrois - Essey Porte Verte" value="2344">22. Saint-Max Gérard Barrois - Essey Porte Verte</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#CCFF00" data-ligne="2447"
-                                        data-numlignepublic="23" data-osmid="line:SUB:23"
-                                        data-libelle="Rosières-aux-Salines Gare - Vandoeuvre Vélodrome-Callot"
-                                        value="2447">23. Rosières-aux-Salines Gare - Vandoeuvre Vélodrome-Callot</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#009966" data-ligne="2448"
-                                        data-numlignepublic="24" data-osmid="line:SUB:24"
-                                        data-libelle="Laneuveville Piscine - Saint-Nicolas-de-Port Filatures"
-                                        value="2448">24. Laneuveville Piscine - Saint-Nicolas-de-Port Filatures</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#C76B6A" data-ligne="2347"
-                                        data-numlignepublic="30" data-osmid="line:GST:30-97"
-                                        data-libelle="Villers Campus Sciences - Laneuveville Gare" value="2347">30. Villers Campus Sciences - Laneuveville Gare</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#F6A63E" data-ligne="2349"
-                                        data-numlignepublic="32" data-osmid="line:GST:32-97"
-                                        data-libelle="Nancy Collège Jean Lamour - Essey La Fallée" value="2349">32. Nancy Collège Jean Lamour - Essey La Fallée</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#F5CE54" data-ligne="2350"
-                                        data-numlignepublic="33" data-osmid="line:GST:33-97"
-                                        data-libelle="Nancy Gare-République - Jarville Gabriel Fauré" value="2350">33. Nancy Gare-République - Jarville Gabriel Fauré</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#4AB79B" data-ligne="2377"
-                                        data-numlignepublic="Citadine 1" data-osmid="line:GST:41-97"
-                                        data-libelle="Citadine 1 - Citadine Nancy" value="2377">Citadine 1. Citadine 1 - Citadine Nancy</option>
-                                
-                            
-                                
-                                <option data-color="#000000" data-background="#349DC0" data-ligne="2378"
-                                        data-numlignepublic="Citadine 2" data-osmid="line:GST:42-97"
-                                        data-libelle="Citadine 2 - Citadine Vandoeuvre" value="2378">Citadine 2. Citadine 2 - Citadine Vandoeuvre</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#E94E1B" data-ligne="2460"
-                                        data-numlignepublic="50" data-osmid="line:GST:50-97"
-                                        data-libelle="Jarville Sion - Ludres"
-                                        value="2460">50. Jarville Sion - Ludres</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#0E4194" data-ligne="2503"
-                                        data-numlignepublic="51" data-osmid="line:GST:51-97"
-                                        data-libelle="Villers Clairlieu - Villers Lycée Stanislas" value="2503">51. Villers Clairlieu - Villers Lycée Stanislas</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#EE747D" data-ligne="2504"
-                                        data-numlignepublic="52" data-osmid="line:GST:52-97"
-                                        data-libelle="Villers George Chepfer - Villers Lycée Stanislas" value="2504">52. Villers George Chepfer - Villers Lycée Stanislas</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#B23143" data-ligne="2505"
-                                        data-numlignepublic="53" data-osmid="line:GST:53-97"
-                                        data-libelle="Malzéville le Nid - Malzéville Collège Paul Verlaine"
-                                        value="2505">53. Malzéville le Nid - Malzéville Collège Paul Verlaine</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#AFCB08" data-ligne="2506"
-                                        data-numlignepublic="54" data-osmid="line:GST:54-97"
-                                        data-libelle="Dommartemont René Nicklès - Malzéville Paul Verlaine"
-                                        value="2506">54. Dommartemont René Nicklès - Malzéville Paul Verlaine</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#FF0000" data-ligne="2507"
-                                        data-numlignepublic="55" data-osmid="line:GST:55-97"
-                                        data-libelle="Jarville Léon Songeur - Heillecourt Collège Montaigu"
-                                        value="2507">55. Jarville Léon Songeur - Heillecourt Collège Montaigu</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#7A227B" data-ligne="2466"
-                                        data-numlignepublic="56" data-osmid="line:GST:56-97"
-                                        data-libelle="Fléville - Jarville Sion" value="2466">56. Fléville - Jarville Sion</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#006666" data-ligne="2508"
-                                        data-numlignepublic="57" data-osmid="line:GST:57-97"
-                                        data-libelle="Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot"
-                                        value="2508">57. Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#2DB0E5" data-ligne="2509"
-                                        data-numlignepublic="58" data-osmid="line:GST:58-97"
-                                        data-libelle="Dommartemont René Nicklès - Tomblaine Groupe Scolaire"
-                                        value="2509">58. Dommartemont René Nicklès - Tomblaine Groupe Scolaire</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#0079BF" data-ligne="2510"
-                                        data-numlignepublic="59" data-osmid="line:GST:59-97"
-                                        data-libelle="Tomblaine Groupe Scolaire - Saulxures Forêt" value="2510">59. Tomblaine Groupe Scolaire - Saulxures Forêt</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#0066CC" data-ligne="2511"
-                                        data-numlignepublic="60" data-osmid="line:GST:60-97"
-                                        data-libelle="Tomblaine Groupe Scolaire - Art-sur-Meurthe" value="2511">60. Tomblaine Groupe Scolaire - Art-sur-Meurthe</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#4BB899" data-ligne="2512"
-                                        data-numlignepublic="61" data-osmid="line:GST:61-97"
-                                        data-libelle="Nancy Gare-République - Art-sur-Meurthe - Bosserville"
-                                        value="2512">61. Nancy Gare-République - Art-sur-Meurthe - Bosserville</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#FF33CC" data-ligne="2513"
-                                        data-numlignepublic="62" data-osmid="line:GST:62-97"
-                                        data-libelle="Nancy Gare-République - Malzéville Pixerécourt" value="2513">62. Nancy Gare-République - Malzéville Pixerécourt</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#E72086" data-ligne="2514"
-                                        data-numlignepublic="63" data-osmid="line:GST:63-97"
-                                        data-libelle="Laxou Jet d'Eau - Laxou Collège Victor Prouvé" value="2514">63. Laxou Jet d'Eau - Laxou Collège Victor Prouvé</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#7E76B5" data-ligne="2515"
-                                        data-numlignepublic="64" data-osmid="line:GST:64-97"
-                                        data-libelle="Nancy Tilleul Argenté - Georges de la Tour" value="2515">64. Nancy Tilleul Argenté - Georges de la Tour</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#1B9CA4" data-ligne="2516"
-                                        data-numlignepublic="65" data-osmid="line:GST:65-97"
-                                        data-libelle="Malzéville Margeville - Nancy Division de Fer" value="2516">65. Malzéville Margeville - Nancy Division de Fer</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#82A8BC" data-ligne="2517"
-                                        data-numlignepublic="66" data-osmid="line:GST:66-97"
-                                        data-libelle="Villers Lycée Stanislas - Fléville" value="2517">66. Villers Lycée Stanislas - Fléville</option>
-                                
-                            
-                                
-                                <option data-color="#FFFFFF" data-background="#F7A703" data-ligne="2518"
-                                        data-numlignepublic="67" data-osmid="line:GST:67-97"
-                                        data-libelle="Ludres Collège Jacques Monod - Fléville l'Orée du Bois"
-                                        value="2518">67. Ludres Collège Jacques Monod - Fléville l'Orée du Bois</option>
-                                
-                            
-                        
-                    </select><span tabindex="0" id="form_ligne-button" role="combobox" aria-expanded="false"
-                                   aria-autocomplete="list" aria-owns="form_ligne-menu" aria-haspopup="true"
-                                   class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span
-                                                    class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span
-                                                    class="ui-selectmenu-text">
-                            Sélectionnez une ligne
-                        </span></span>
-                </span>
-                                        </label>
-                                        <label for="form_arret"><span class="label">Mon arrêt :</span>
-                                            <span class="select">
-                       <select id="form_arret" name="arret" required="required" data-reset="Sélectionnez un arrêt">
-
-                       </select>
-                    </span>
-                                        </label>
-                                        <div class="form-submit">
-                                            <button id="form_tpsreel_submit" type="submit">
-                                                Rechercher un horaire<i class="icon-check" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="wrapper-result">
-                                    <div class="wrapper-result-chapeau"></div>
-                                    <div class="tpsreel-legende">Prochains passages dans</div>
-                                    <div class="custom-scroll-tpsreel">
-                                        <div class="wrapper-result-tpsreel"></div>
-                                    </div>
-                                    <form>
-                                        <div class="form-submit">
-                                            <button class="btn" id="form_tpsreel_reset" type="reset">
-                                                Autres horaires <i class="icon-check" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div id="horairestpsreel_loader" class="sk-fading-circle">
-                                    <div class="sk-circle1 sk-circle"></div>
-                                    <div class="sk-circle2 sk-circle"></div>
-                                    <div class="sk-circle3 sk-circle"></div>
-                                    <div class="sk-circle4 sk-circle"></div>
-                                    <div class="sk-circle5 sk-circle"></div>
-                                    <div class="sk-circle6 sk-circle"></div>
-                                    <div class="sk-circle7 sk-circle"></div>
-                                    <div class="sk-circle8 sk-circle"></div>
-                                    <div class="sk-circle9 sk-circle"></div>
-                                    <div class="sk-circle10 sk-circle"></div>
-                                    <div class="sk-circle11 sk-circle"></div>
-                                    <div class="sk-circle12 sk-circle"></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="form-box horaire_arret">
-                            <h2 class="titre widget-event"><i class="icon-stop-bus" aria-hidden="true"></i>Fiche
-                                horaires de l'arrêt</h2>
-                            <div class="form-content">
-                                <form method="post" id="horairesarret-form"
-                                      action="/?tx_kggestioncontenus_kggestioncontenus%5Baction%5D=ajax&amp;tx_kggestioncontenus_kggestioncontenus%5Bcontroller%5D=Ecran&amp;type=476&amp;cHash=f371913a7243f9a1449f5717d5f5ddc9">
-                                    <div>
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][@extension]"
-                                               value="KgGestioncontenus">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][@vendor]"
-                                               value="Koredge">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][@controller]"
-                                               value="Ecran">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][@action]"
-                                               value="homewidgets">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][arguments]"
-                                               value="YTowOnt96dbbaaef1f2a8f15ccbe084391221740524906cd">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__referrer][@request]"
-                                               value="a:4:{s:10:&quot;@extension&quot;;s:17:&quot;KgGestioncontenus&quot;;s:11:&quot;@controller&quot;;s:5:&quot;Ecran&quot;;s:7:&quot;@action&quot;;s:11:&quot;homewidgets&quot;;s:7:&quot;@vendor&quot;;s:7:&quot;Koredge&quot;;}ace6c50559aaab7f7195627aeb45379a7f9ad7bf">
-                                        <input type="hidden"
-                                               name="tx_kggestioncontenus_kggestioncontenus[__trustedProperties]"
-                                               value="a:0:{}914f42f9c1f56d5256292001abf850666a544473">
-                                    </div>
-
-                                    <span class="select">
-                <select id="form_ligne_horairesarret" name="ligne_horairesarret" required="required"
-                        style="display: none;">
-                    <option disabled="" selected="">
-                        Sélectionnez une ligne
-                    </option>
-                    
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#E30613" data-ligne="2484"
-                                    data-numlignepublic="T1" data-osmid="101"
-                                    data-libelle="Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré" value="2484">T1. Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#0000FF" data-ligne="2330"
-                                    data-numlignepublic="T2" data-osmid="102"
-                                    data-libelle="Laxou Sapinière - Laneuveville Centre" value="2330">T2. Laxou Sapinière - Laneuveville Centre</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#008080" data-ligne="2331"
-                                    data-numlignepublic="T3" data-osmid="103"
-                                    data-libelle="Villers Campus Sciences  - Seichamps Haie Cerlin" value="2331">T3. Villers Campus Sciences  - Seichamps Haie Cerlin</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#FFDD04" data-ligne="2332"
-                                    data-numlignepublic="T4" data-osmid="104"
-                                    data-libelle="Laxou Champ-le-Boeuf - Houdemont Porte Sud" value="2332">T4. Laxou Champ-le-Boeuf - Houdemont Porte Sud</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#421782" data-ligne="2523"
-                                    data-numlignepublic="T5" data-osmid="105"
-                                    data-libelle="Maxéville Meurthe Canal - Vandoeuvre Roberval" value="2523">T5. Maxéville Meurthe Canal - Vandoeuvre Roberval</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#83171A" data-ligne="2530"
-                                    data-numlignepublic="Corol" data-osmid="107"
-                                    data-libelle="Laxou Plateau de Haye - Laxou Plateau de Haye" value="2530">Corol. Laxou Plateau de Haye - Laxou Plateau de Haye</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#009999" data-ligne="2446"
-                                    data-numlignepublic="10" data-osmid=""
-                                    data-libelle="Pompey Parc Eiffel - Nancy Place Carnot" value="2446">10. Pompey Parc Eiffel - Nancy Place Carnot</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#FF7900" data-ligne="2335"
-                                    data-numlignepublic="11" data-osmid="111"
-                                    data-libelle="Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde"
-                                    value="2335">11. Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#99C225" data-ligne="2336"
-                                    data-numlignepublic="12" data-osmid="112" data-libelle="Malzéville - Heillecourt"
-                                    value="2336">12. Malzéville - Heillecourt</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#33543C" data-ligne="2337"
-                                    data-numlignepublic="13" data-osmid="113"
-                                    data-libelle="Maxéville ZA Saint-Jacques - Dommartemont" value="2337">13. Maxéville ZA Saint-Jacques - Dommartemont</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#229E6B" data-ligne="2338"
-                                    data-numlignepublic="14" data-osmid="114"
-                                    data-libelle="Nancy Gare-République - Ludres" value="2338">14. Nancy Gare-République - Ludres</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#70C7D2" data-ligne="2339"
-                                    data-numlignepublic="15" data-osmid="115"
-                                    data-libelle="Nancy Gare-République - Seichamps Ecoquartier" value="2339">15. Nancy Gare-République - Seichamps Ecoquartier</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#1F94CB" data-ligne="2340"
-                                    data-numlignepublic="16" data-osmid="116"
-                                    data-libelle="Malzéville - Malzéville Pixerécourt - Villers Clairlieu" value="2340">16. Malzéville - Malzéville Pixerécourt - Villers Clairlieu</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#3A5C88" data-ligne="2341"
-                                    data-numlignepublic="17" data-osmid="117"
-                                    data-libelle="Villers Campus Sciences - Ludres Marvingt" value="2341">17. Villers Campus Sciences - Ludres Marvingt</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#000000" data-ligne="2521"
-                                    data-numlignepublic="18" data-osmid=""
-                                    data-libelle="Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République"
-                                    value="2521">18. Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#593C90" data-ligne="2342"
-                                    data-numlignepublic="20" data-osmid="220"
-                                    data-libelle="Nancy Gare-République - Art-sur-Meurthe" value="2342">20. Nancy Gare-République - Art-sur-Meurthe</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#963B8E" data-ligne="2343"
-                                    data-numlignepublic="21" data-osmid="221"
-                                    data-libelle="Nancy Gare-République - Fléville - Ludres Marvingt" value="2343">21. Nancy Gare-République - Fléville - Ludres Marvingt</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#D2378C" data-ligne="2344"
-                                    data-numlignepublic="22" data-osmid="222"
-                                    data-libelle="Saint-Max Gérard Barrois - Essey Porte Verte" value="2344">22. Saint-Max Gérard Barrois - Essey Porte Verte</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#C76B6A" data-ligne="2347"
-                                    data-numlignepublic="30" data-osmid="330"
-                                    data-libelle="Villers Campus Sciences - Laneuveville Gare" value="2347">30. Villers Campus Sciences - Laneuveville Gare</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#F6A63E" data-ligne="2349"
-                                    data-numlignepublic="32" data-osmid="332"
-                                    data-libelle="Nancy Collège Jean Lamour - Essey La Fallée" value="2349">32. Nancy Collège Jean Lamour - Essey La Fallée</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#F5CE54" data-ligne="2350"
-                                    data-numlignepublic="33" data-osmid="333"
-                                    data-libelle="Nancy Gare-République - Jarville Gabriel Fauré" value="2350">33. Nancy Gare-République - Jarville Gabriel Fauré</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#4AB79B" data-ligne="2377"
-                                    data-numlignepublic="Citadine 1" data-osmid="410"
-                                    data-libelle="Citadine 1 - Citadine Nancy" value="2377">Citadine 1. Citadine 1 - Citadine Nancy</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#349DC0" data-ligne="2378"
-                                    data-numlignepublic="Citadine 2" data-osmid="420"
-                                    data-libelle="Citadine 2 - Citadine Vandoeuvre" value="2378">Citadine 2. Citadine 2 - Citadine Vandoeuvre</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#E94E1B" data-ligne="2460"
-                                    data-numlignepublic="50" data-osmid="" data-libelle="Jarville Sion - Ludres"
-                                    value="2460">50. Jarville Sion - Ludres</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#0E4194" data-ligne="2503"
-                                    data-numlignepublic="51" data-osmid=""
-                                    data-libelle="Villers Clairlieu - Villers Lycée Stanislas" value="2503">51. Villers Clairlieu - Villers Lycée Stanislas</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#EE747D" data-ligne="2504"
-                                    data-numlignepublic="52" data-osmid=""
-                                    data-libelle="Villers George Chepfer - Villers Lycée Stanislas" value="2504">52. Villers George Chepfer - Villers Lycée Stanislas</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#B23143" data-ligne="2505"
-                                    data-numlignepublic="53" data-osmid=""
-                                    data-libelle="Malzéville le Nid - Malzéville Collège Paul Verlaine" value="2505">53. Malzéville le Nid - Malzéville Collège Paul Verlaine</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#AFCB08" data-ligne="2506"
-                                    data-numlignepublic="54" data-osmid=""
-                                    data-libelle="Dommartemont René Nicklès - Malzéville Paul Verlaine" value="2506">54. Dommartemont René Nicklès - Malzéville Paul Verlaine</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#FF0000" data-ligne="2507"
-                                    data-numlignepublic="55" data-osmid=""
-                                    data-libelle="Jarville Léon Songeur - Heillecourt Collège Montaigu" value="2507">55. Jarville Léon Songeur - Heillecourt Collège Montaigu</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#7A227B" data-ligne="2466"
-                                    data-numlignepublic="56" data-osmid="" data-libelle="Fléville - Jarville Sion"
-                                    value="2466">56. Fléville - Jarville Sion</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#006666" data-ligne="2508"
-                                    data-numlignepublic="57" data-osmid=""
-                                    data-libelle="Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot"
-                                    value="2508">57. Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#2DB0E5" data-ligne="2509"
-                                    data-numlignepublic="58" data-osmid=""
-                                    data-libelle="Dommartemont René Nicklès - Tomblaine Groupe Scolaire" value="2509">58. Dommartemont René Nicklès - Tomblaine Groupe Scolaire</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#0079BF" data-ligne="2510"
-                                    data-numlignepublic="59" data-osmid=""
-                                    data-libelle="Tomblaine Groupe Scolaire - Saulxures Forêt" value="2510">59. Tomblaine Groupe Scolaire - Saulxures Forêt</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#0066CC" data-ligne="2511"
-                                    data-numlignepublic="60" data-osmid=""
-                                    data-libelle="Tomblaine Groupe Scolaire - Art-sur-Meurthe" value="2511">60. Tomblaine Groupe Scolaire - Art-sur-Meurthe</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#4BB899" data-ligne="2512"
-                                    data-numlignepublic="61" data-osmid=""
-                                    data-libelle="Nancy Gare-République - Art-sur-Meurthe - Bosserville" value="2512">61. Nancy Gare-République - Art-sur-Meurthe - Bosserville</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#FF33CC" data-ligne="2513"
-                                    data-numlignepublic="62" data-osmid=""
-                                    data-libelle="Nancy Gare-République - Malzéville Pixerécourt" value="2513">62. Nancy Gare-République - Malzéville Pixerécourt</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#E72086" data-ligne="2514"
-                                    data-numlignepublic="63" data-osmid=""
-                                    data-libelle="Laxou Jet d'Eau - Laxou Collège Victor Prouvé" value="2514">63. Laxou Jet d'Eau - Laxou Collège Victor Prouvé</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#7E76B5" data-ligne="2515"
-                                    data-numlignepublic="64" data-osmid=""
-                                    data-libelle="Nancy Tilleul Argenté - Georges de la Tour" value="2515">64. Nancy Tilleul Argenté - Georges de la Tour</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#1B9CA4" data-ligne="2516"
-                                    data-numlignepublic="65" data-osmid=""
-                                    data-libelle="Malzéville Margeville - Nancy Division de Fer" value="2516">65. Malzéville Margeville - Nancy Division de Fer</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#82A8BC" data-ligne="2517"
-                                    data-numlignepublic="66" data-osmid=""
-                                    data-libelle="Villers Lycée Stanislas - Fléville" value="2517">66. Villers Lycée Stanislas - Fléville</option>
-                            
-                        
-                            
-                            <option data-color="#FFFFFF" data-background="#F7A703" data-ligne="2518"
-                                    data-numlignepublic="67" data-osmid=""
-                                    data-libelle="Ludres Collège Jacques Monod - Fléville l'Orée du Bois" value="2518">67. Ludres Collège Jacques Monod - Fléville l'Orée du Bois</option>
-                            
-                        
-                    
-                </select><span tabindex="0" id="form_ligne_horairesarret-button" role="combobox" aria-expanded="false"
-                               aria-autocomplete="list" aria-owns="form_ligne_horairesarret-menu" aria-haspopup="true"
-                               class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span
-                                            class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span
-                                            class="ui-selectmenu-text">
-                        Sélectionnez une ligne
-                    </span></span>
-            </span>
-                                    <label for="form_direction_horairesarret"><span class="label sr-only">Direction (sélectionnez d'abord une ligne)</span>
-                                        <span class="select">
-                   <select id="form_direction_horairesarret" name="direction_horairesarret" required="required">
-                   </select>
-                </span>
-                                    </label>
-                                    <label for="form_arrets_horairesarret"><span class="label sr-only">Arrêt (sélectionnez d'abord une direction)</span>
-                                        <span class="select">
-                   <select id="form_arrets_horairesarret" name="arret_horairesarret" required="required">
-                   </select>
-                </span>
-                                    </label>
-                                    <div class="form-submit">
-                                        <button id="form_horairesarret_submit" type="submit">
-                                            Trouver mon arrêt<i class="icon-fleche" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </form>
-
-                                <div id="horairesarret_loader" class="sk-fading-circle">
-                                    <div class="sk-circle1 sk-circle"></div>
-                                    <div class="sk-circle2 sk-circle"></div>
-                                    <div class="sk-circle3 sk-circle"></div>
-                                    <div class="sk-circle4 sk-circle"></div>
-                                    <div class="sk-circle5 sk-circle"></div>
-                                    <div class="sk-circle6 sk-circle"></div>
-                                    <div class="sk-circle7 sk-circle"></div>
-                                    <div class="sk-circle8 sk-circle"></div>
-                                    <div class="sk-circle9 sk-circle"></div>
-                                    <div class="sk-circle10 sk-circle"></div>
-                                    <div class="sk-circle11 sk-circle"></div>
-                                    <div class="sk-circle12 sk-circle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="form-box itineraire">
-                            <h2 class="titre widget-event"><i class="icon-route" aria-hidden="true"></i>Itinéraire</h2>
-                            <div class="form-content">
-                                <form action="/se-deplacer/itineraire/calcul-ditineraire" method="post">
-                                    <label for="itineraire-depart"><span class="label">Départ :</span>
-                                        <span class="lieu">
-                    <input type="text" id="itineraire-depart"
-                           class="itineraire-autocomplete autocomplete ui-autocomplete-input" value=""
-                           name="start_default" placeholder="Adresse, arrêt, lieu" data-target="start_id"
-                           autocomplete="off">
-                    <input type="hidden" id="start_id" name="start_id" value="">
-                    <input type="hidden" name="start" value="">
-                    <input type="hidden" id="start_id_lon" name="start_id_lon" value="">
-                    <input type="hidden" id="start_id_lat" name="start_id_lat" value="">
-                </span>
-                                    </label>
-                                    <label for="itineraire-arrivee"><span class="label">Arrivée :</span>
-                                        <span class="arrivee">
-                    <input id="itineraire-arrivee" class="itineraire-autocomplete autocomplete ui-autocomplete-input"
-                           type="text" value="" name="end_default" placeholder="Adresse, arrêt, lieu"
-                           data-target="end_id" autocomplete="off">
-                    <input type="hidden" id="end_id" name="end_id" value="">
-                    <input type="hidden" name="end" value="">
-                    <input type="hidden" id="end_id_lon" name="end_id_lon" value="">
-                    <input type="hidden" id="end_id_lat" name="end_id_lat" value="">
-                </span>
-                                    </label>
-                                    <div class="form-submit">
-                                        <button type="submit">
-                                            Calculer mon itinéraire
-                                        </button>
-                                    </div>
-                                </form>
-                                <div id="itineraire_loader" class="sk-fading-circle">
-                                    <div class="sk-circle1 sk-circle"></div>
-                                    <div class="sk-circle2 sk-circle"></div>
-                                    <div class="sk-circle3 sk-circle"></div>
-                                    <div class="sk-circle4 sk-circle"></div>
-                                    <div class="sk-circle5 sk-circle"></div>
-                                    <div class="sk-circle6 sk-circle"></div>
-                                    <div class="sk-circle7 sk-circle"></div>
-                                    <div class="sk-circle8 sk-circle"></div>
-                                    <div class="sk-circle9 sk-circle"></div>
-                                    <div class="sk-circle10 sk-circle"></div>
-                                    <div class="sk-circle11 sk-circle"></div>
-                                    <div class="sk-circle12 sk-circle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <a id="c5"></a>
-        <section class="wrapper-section-centrale">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-8">
-                        <div class="actu-titre"><i class="icon-news" aria-hidden="true"></i> Actualités</div>
-                        <div class="actu-content">
-
-
-                            <a id="actu-0"
-                               href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/collecte-solidaire"
-                               class="img" title="Collecte solidaire" style="">
-                                <img src="https://tim.reseau-stan.com/resize_picture/780/360?url=https%3A%2F%2Ftim.reseau-stan.com%2Ftim%2Fdata%2Fimage%2F2531_Visuel_actualit%C3%A9_site_web-min.jpg"
-                                     alt=""></a>
-
-
-                            <a id="actu-1"
-                               href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/1-mois-dabonnement-illimite-offert"
-                               class="img" title="1 mois d'abonnement offert " style="display: none;">
-                                <img src="https://tim.reseau-stan.com/resize_picture/780/360?url=https%3A%2F%2Ftim.reseau-stan.com%2Ftim%2Fdata%2Fimage%2F2524_780X360_DIAPO_SITE.png"
-                                     alt=""></a>
-
-
-                            <a id="actu-2"
-                               href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/calendrier-de-l-avent"
-                               class="img" title="Calendrier de l'Avent" style="display: none;">
-                                <img src="https://tim.reseau-stan.com/resize_picture/780/360?url=https%3A%2F%2Ftim.reseau-stan.com%2Ftim%2Fdata%2Fimage%2F2532_Actu_site_internet_calendrier_de_l_avent.jpg"
-                                     alt=""></a>
-
-
-                        </div>
-                        <div class="navig">
-                            <ul role="tablist">
-
-                                <li class="active">
-                                    <a class="titre" href="#actu-0" aria-selected="true" aria-controls="actu-0"
-                                       role="tab">
-                                        Collecte solidaire
-                                    </a>
-
-                                    <a class="more"
-                                       href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/collecte-solidaire">
-                                        Lire la suite
-                                    </a>
-
-
-                                </li>
-
-                                <li class="">
-                                    <a class="titre" href="#actu-1" aria-selected="false" aria-controls="actu-1"
-                                       role="tab">
-                                        1 mois d'abonnement offert
-                                    </a>
-
-                                    <a class="more"
-                                       href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/1-mois-dabonnement-illimite-offert">
-                                        Lire la suite
-                                    </a>
-
-
-                                </li>
-
-                                <li class="">
-                                    <a class="titre" href="#actu-2" aria-selected="false" aria-controls="actu-2"
-                                       role="tab">
-                                        Calendrier de l'Avent
-                                    </a>
-
-                                    <a class="more"
-                                       href="https://www.reseau-stan.com/le-reseau-stan/stan-et-vous/actualites/calendrier-de-l-avent">
-                                        Lire la suite
-                                    </a>
-
-
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <ul class="acces_rapide">
-
-                            <li>
-                                <a href="/se-deplacer/itineraire-plans/plans-du-reseau" title="Plans"><i
-                                        class="icon-map" aria-hidden="true"></i><span>Plans</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/titres-tarifs/tous-les-titres" title="Tarifs"><i class="icon-price"
-                                                                                           aria-hidden="true"></i><span>Tarifs</span></a>
-                            </li>
-
-                            <li>
-                                <a href="https://twitter.com/reseaustan" title="En direct" target="_blank"><i
-                                        class="icon-twitter" aria-hidden="true"></i><span>En direct</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/se-deplacer/transport-a-la-demande" title="Réservation"><i class="icon-car1"
-                                                                                                     aria-hidden="true"></i><span>Réservation</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/le-reseau-stan/stan-et-vous/documents-a-telecharger"
-                                   title="Documents à télécharger"><i class="icon-document"
-                                                                      aria-hidden="true"></i><span>Documents à télécharger</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/se-deplacer/accessibilite/un-reseau-amenage" title="Accessibilité"><i
-                                        class="icon-handicap" aria-hidden="true"></i><span>Accessibilité</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/titres-tarifs/points-de-vente" title="Où acheter son titre"><i
-                                        class="icon-shop" aria-hidden="true"></i><span>Où acheter son titre</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/se-deplacer/infos-trafic/perturbations-programmees" title="Infos Trafic"><i
-                                        class="icon-danger" aria-hidden="true"></i><span>Infos Trafic</span></a>
-                            </li>
-
-                            <li>
-                                <a href="/se-deplacer/itineraire/calcul-ditineraire" title="Itinéraires"><i
-                                        class="icon-location" aria-hidden="true"></i><span>Itinéraires</span></a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-12 voirtout">
-                        <a class="btn" href="/le-reseau-stan/stan-et-vous/actualites">Toutes nos actualités</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="wrapper-section-events">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12">
-                        <p class="staticevent-titre">Sortir avec le réseau Stan, tout au long de la nuit</p>
-                    </div>
-
-                </div>
-                <div class="row">
-
-                    <div class="col-12 col-sm-4">
-                        <div class="staticevent-item">
-
-                            <i class="icon-star1" aria-hidden="true"></i>
-
-
-                            <span class="staticevent-itemtitre">Flexo soirée</span>
-
-
-                            <span class="staticevent-emptyitemsstitre"></span>
-
-
-                            <p class="staticevent-itemaccroche">Votre retour en fin de soirée assuré avec des départs
-                                depuis le centre-ville vers toutes les communes de la Métropole entre 21h30 et
-                                00h30.</p>
-
-
-                            <a href="/offre-de-nuit" class="btn">En savoir plus</a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-4">
-                        <div class="staticevent-item">
-
-                            <i class="icon-moon" aria-hidden="true"></i>
-
-
-                            <span class="staticevent-itemtitre">Pleine Lune</span>
-
-
-                            <span class="staticevent-emptyitemsstitre"></span>
-
-
-                            <p class="staticevent-itemaccroche">Pour les noctambules, des départs entre 1h30 et 4h30 les
-                                jeudis, vendredis et samedis soirs.</p>
-
-
-                            <a href="/offre-de-nuit" class="btn">En savoir plus</a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-4">
-                        <div class="staticevent-item">
-
-                            <i class="icon-car1" aria-hidden="true"></i>
-
-
-                            <span class="staticevent-itemtitre">Navettes loisirs</span>
-
-
-                            <span class="staticevent-emptyitemsstitre"></span>
-
-
-                            <p class="staticevent-itemaccroche">Un match de foot ou de basket ? Un concert au Zénith ?
-                                Pensez au réseau Stan.</p>
-
-
-                            <a href="/se-deplacer/navettes-spectacles-et-matchs" class="btn">En savoir plus</a>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
-
-
-    </main>
-</div>
-
-<a id="c8"></a>
-<footer role="contentinfo">
-    <div class="container">
-        <div class="title-footer row">
-            <div class="col-12 col-lg-3">
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseSedeplacer" role="button"
-                                            aria-expanded="false" aria-controls="collapseSedeplacer"
-                                            class="collapsed collapsedfooter">
-                    Se déplacer<span class="icon-arrow-right2"></span></a>
-                    <ul class="collapse collapsefooter in" id="collapseSedeplacer" style="height: auto;">
-                        <li class="sub"><a href="/se-deplacer/horaires" title="Horaires" class="sub">Horaires</a></li>
-                        <li class="sub"><a href="/se-deplacer/itineraire-plans" title="Itinéraire &amp; plans"
-                                           class="sub">Itinéraire &amp; plans</a></li>
-                        <li class="sub"><a href="/se-deplacer/infos-trafic" title="Infos trafic" class="sub">Infos
-                            trafic</a></li>
-                        <li class="sub"><a href="/se-deplacer/lintermodalite" title="L’intermodalité" class="sub">L’intermodalité</a>
-                        </li>
-                        <li class="sub"><a href="/loffre-de-transport" title="L’offre de transport" class="sub">L’offre
-                            de transport</a></li>
-                        <li class="sub"><a href="/se-deplacer/navettes-spectacles-et-matchs"
-                                           title="Navettes spectacles et matchs" class="sub">Navettes spectacles et
-                            matchs</a></li>
-                        <li class="sub"><a href="/se-deplacer/transport-a-la-demande" title="Transports à la demande"
-                                           class="sub">Transports à la demande</a></li>
-                        <li class="sub"><a href="/se-deplacer/accessibilite" title="Accessibilité" class="sub">Accessibilité</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseReseau" role="button"
-                                            aria-expanded="false" aria-controls="collapseReseau"
-                                            class="collapsed collapsedfooter">
-                    Le réseau STAN<span class="icon-arrow-right2"></span></a>
-                    <ul class="collapse collapsefooter" id="collapseReseau" style="height: 0px;">
-                        <li class="sub"><a href="/le-reseau-stan/acteurs-et-missions" title="Acteurs et missions"
-                                           class="sub">Acteurs et missions</a></li>
-                        <li class="sub"><a href="/le-reseau-stan/stan-et-vous" title="Stan et vous" class="sub">Stan et
-                            vous</a></li>
-                        <li class="sub"><a href="/outils-et-services" title="Outils et services" class="sub">Outils et
-                            services</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3">
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseTarifs" role="button"
-                                            aria-expanded="false" aria-controls="collapseTarifs"
-                                            class="collapsed collapsedfooter">
-                    Titres &amp; tarifs<span class="icon-arrow-right2"></span></a>
-                    <ul class="collapse collapsefooter" id="collapseTarifs" style="height: 0px;">
-                        <li class="sub"><a href="/titres-tarifs/mode-demploi" title="Mode d’emploi" class="sub">Mode
-                            d’emploi</a></li>
-                        <li><a href="/titres-tarifs/tous-les-titres" title="Tarifs au 1er Août 2025">Tarifs au 1er Août
-                            2025</a></li>
-                        <li class="sub"><a href="/titres-tarifs/points-de-vente" title="Points de vente" class="sub">Points
-                            de vente</a></li>
-                        <li class="sub"><a href="/titres-tarifs/amendes" title="Amendes" class="sub">Amendes</a></li>
-                    </ul>
-                </div>
-                <div class="list-footer"><a href="/e-boutique" class="linked">E-boutique</a></div>
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseBienvoyager" role="button"
-                                            aria-expanded="false" aria-controls="collapseBienvoyager"
-                                            class="collapsed collapsedfooter">
-                    Accessibilité<span class="icon-arrow-right2"></span></a>
-                    <ul class="collapse collapsefooter" id="collapseBienvoyager" style="height: 0px;">
-                        <li><a href="/se-deplacer/accessibilite/un-reseau-amenage" title="Un réseau aménagé">Un réseau
-                            aménagé</a></li>
-                        <li><a href="/se-deplacer/accessibilite/arrets-amenages-pmr" title="Arrêts aménagés PMR">Arrêts
-                            aménagés PMR</a></li>
-                        <li><a href="/loffre-de-transport/handistan" title="Handistan">Handistan</a></li>
-                        <li><a href="/se-deplacer/accessibilite/stan-me-guide" title="Stan me guide">Stan me guide</a>
-                        </li>
-                        <li><a href="/se-deplacer/accessibilite/telecommande-phitech-infos-sonores-aux-arrets"
-                               title="Télécommande Phitech (infos sonores aux arrêts)">Télécommande Phitech (infos
-                            sonores aux arrêts)</a></li>
-                        <li><a href="/se-deplacer/accessibilite/accessibilite-du-site-internet"
-                               title="Accessibilité du site internet">Accessibilité du site internet</a></li>
-                    </ul>
-                    <ul>
-                        <li><a class="btn-contraste contraste-normal" rel="nofollow"
-                               href="/?contraste=1&amp;cHash=c292ee3d8a933500af3dd183b0bd0b78">Activer le thème par
-                            défaut</a></li>
-                        <li><a class="btn-contraste contraste-eleve" rel="nofollow"
-                               href="/?contraste=2&amp;cHash=33eebed0cfa0dd656db750111aebac9d">Activer le thème à forts
-                            contrastes</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseEspaceTransports" role="button"
-                                            aria-expanded="false" aria-controls="collapseEspaceTransports"
-                                            class="collapsed collapsedfooter">
-                    Espace info mobilités<span class="icon-arrow-right2"></span></a>
-                    <div class="collapse collapsefooter" id="collapseEspaceTransports" style="height: 0px;"><p
-                            class="rectangle"><i class="icon-location" aria-hidden="true"></i> 2 place de la république,
-                        54000 Nancy</p>
-                        <p class="infocomp">Du lundi au samedi de 7h à 19h</p></div>
-                </div>
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseInformations" role="button"
-                                            aria-expanded="false" aria-controls="collapseInformations"
-                                            class="collapsed collapsedfooter">
-                    Informations<span class="icon-arrow-right2"></span></a>
-                    <div class="collapse collapsefooter" id="collapseInformations" style="height: 0px;"><p
-                            class="rectangle"><i class="icon-phone" aria-hidden="true"></i> 03 83 30 08 08</p>
-                        <p class="infocomp">Du lundi au samedi de 7h à 19h30 et le dimanche de 12h30 à 19H30</p></div>
-                </div>
-                <div class="list-footer"><a data-toggle="collapse" href="#collapseRetrouverlapplication" role="button"
-                                            aria-expanded="false" aria-controls="collapseRetrouverlapplication"
-                                            class="collapsed collapsedfooter">
-                    Retrouvez l'application<span class="icon-arrow-right2"></span></a>
-                    <div class="collapse collapsefooter" id="collapseRetrouverlapplication" style="height: 0px;"><a
-                            href="https://apps.apple.com/us/app/stan/id521182500?l=fr&amp;ls=1" target="_blank"
-                            class="link-app"><img alt="Disponible sur App Store"
-                                                  src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/images/logo_appstore.png"
-                                                  width="130" height="44"></a><a
-                            href="https://play.google.com/store/apps/details?id=fr.cityway.android.stan" target="_blank"
-                            class="link-app"><img alt="Disponible sur Google Play"
-                                                  src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/images/logo_googleplay.png"
-                                                  width="130" height="44"></a></div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-2">
-                <ul class="partenaires-footer">
-                    <li><a href="/"><img alt="STAN"
-                                         src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/images/stan.png"
-                                         width="360" height="132"></a></li>
-                    <li><a href="https://www.grandnancy.eu/accueil/"><img alt="Métropole Grand Nancy"
-                                                                          src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/images/metropole_nancy.png"
-                                                                          width="360" height="144"></a></li>
-                    <li><a href="https://www.keolis.com/"><img alt="Kéolis"
-                                                               src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/images/keolis.png"
-                                                               width="362" height="56"></a></li>
-                </ul>
-            </div>
-            <div class="col-12">
-                <div class="signature-footer"><a
-                        title="Koredge, agence digitale Lyon et Besançon – création de site internet, référencement, social média"
-                        target="_blank" href="http://www.koredge.fr">Réalisation koredge</a> |
-                    <a href="/mentions-legales">Mentions légales et CGU</a> | <a
-                            href="/informations/politique-de-confidentialite">Politique de confidentialité</a> | <a
-                            href="/informations/politique-des-cookies">Politique des cookies</a></div>
-            </div>
-        </div>
-    </div><!-- /.container -->
-    <button type="button" id="back-to-top" title="Retour en haut de page">↑
-        <span class="sr-only">Retour en haut de page</span></button>
-</footer>
-<div id="searchformwrap" class="fullscreen-overlay">
-    <form action="/resultat-de-recherche" method="get" id="searchform"><label class="screen-reader-text searchlabel"
-                                                                              for="searchfor">Tapez votre
-        recherche</label><input type="text" name="tx_kesearch_pi1[sword]" id="searchfor" class="search"
-                                placeholder="Tapez votre recherche">
-        <button type="submit" id="searchsubmit" class="btn">Rechercher</button>
-        <button type="button" class="close"><span class="sr-only">Fermer la fenêtre de recherche</span></button>
-    </form>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-<script src="https://www.reseau-stan.com/typo3conf/ext/powermail/Resources/Public/JavaScript/Libraries/jquery.datetimepicker.min.js?1637146349"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/powermail/Resources/Public/JavaScript/Libraries/parsley.min.js?1637146349"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/powermail/Resources/Public/JavaScript/Powermail/Tabs.min.js?1637146349"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/powermail/Resources/Public/JavaScript/Powermail/Form.min.js?1637146349"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/bootstrap/bootstrap.min.js?1550069270"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/fancybox/jquery.fancybox.min.js?1554371314"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/notiny/notiny.min.js?1555341968"
-        type="text/javascript"></script>
-<div class="notiny">
-    <div class="notiny-container" style="top: 10px; left: 10px;"></div>
-    <div class="notiny-container" style="bottom: 10px; left: 10px;"></div>
-    <div class="notiny-container" style="top: 10px; right: 10px;"></div>
-    <div class="notiny-container" style="bottom: 10px; right: 10px;"></div>
-    <div class="notiny-container notiny-container-fluid-top" style="top: 0px; left: 0px; right: 0px;"></div>
-    <div class="notiny-container notiny-container-fluid-bottom" style="bottom: 0px; left: 0px; right: 0px;"></div>
-</div>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/vendor/smartbannerjs/smartbanner.min.js?1625640102"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/js/app.min.js?1607616249"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_gestioncontenus/Resources/Public/js/panel_infostrafic.js?1663076191"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_package/Resources/Public/js/a11y.js?1660804671"
-        type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_gestioncontenus/Resources/Public/js/carousel_actus.js?1666881359"
-        type="text/javascript"></script>
-<script src="https://www.reseau-stan.com/typo3conf/ext/kg_gestioncontenus/Resources/Public/js/widget_select.js?1760946786"
-        type="text/javascript"></script>
-
-
-<div class="ui-selectmenu-menu ui-front">
-    <ul aria-hidden="true" aria-labelledby="form_ligne-button" id="form_ligne-menu" role="listbox" tabindex="0"
-        class="ui-menu ui-corner-bottom ui-widget ui-widget-content overflow"></ul>
-</div>
-<div class="ui-selectmenu-menu ui-front">
-    <ul aria-hidden="true" aria-labelledby="form_ligne_horairesarret-button" id="form_ligne_horairesarret-menu"
-        role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content overflow"></ul>
-</div>
-<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
-    style="display: none;"></ul>
-<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-<ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
-    style="display: none;"></ul>
-<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-</body>
-</html>
+<select id="form_ligne" name="ligne" required="required" style="display: none;">
+    <option disabled="" selected="">
+        Sélectionnez une ligne
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#E30613" data-ligne="2484" data-numlignepublic="T1"
+            data-osmid="line:GST:1-97" data-libelle="Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré" value="2484">T1.
+        Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#0000FF" data-ligne="2330" data-numlignepublic="T2"
+            data-osmid="line:GST:2-97" data-libelle="Laxou Sapinière - Laneuveville Centre" value="2330">T2. Laxou
+        Sapinière - Laneuveville Centre
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#008080" data-ligne="2331" data-numlignepublic="T3"
+            data-osmid="line:GST:3-97" data-libelle="Villers Campus Sciences  - Seichamps Haie Cerlin" value="2331">T3.
+        Villers Campus Sciences - Seichamps Haie Cerlin
+    </option>
+
+
+    <option data-color="#000000" data-background="#FFDD04" data-ligne="2332" data-numlignepublic="T4"
+            data-osmid="line:GST:4-97" data-libelle="Laxou Champ-le-Boeuf - Houdemont Porte Sud" value="2332">T4. Laxou
+        Champ-le-Boeuf - Houdemont Porte Sud
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#421782" data-ligne="2523" data-numlignepublic="T5"
+            data-osmid="line:GST:5-97" data-libelle="Maxéville Meurthe Canal - Vandoeuvre Roberval" value="2523">T5.
+        Maxéville Meurthe Canal - Vandoeuvre Roberval
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#83171A" data-ligne="2530" data-numlignepublic="Corol"
+            data-osmid="line:GST:7" data-libelle="Laxou Plateau de Haye - Laxou Plateau de Haye" value="2530">Corol.
+        Laxou Plateau de Haye - Laxou Plateau de Haye
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#009999" data-ligne="2446" data-numlignepublic="10"
+            data-osmid="line:SUB:10" data-libelle="Pompey Parc Eiffel - Nancy Place Carnot" value="2446">10. Pompey Parc
+        Eiffel - Nancy Place Carnot
+    </option>
+
+
+    <option data-color="#000000" data-background="#FF7900" data-ligne="2335" data-numlignepublic="11"
+            data-osmid="line:GST:11-97" data-libelle="Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde"
+            value="2335">11. Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde
+    </option>
+
+
+    <option data-color="#000000" data-background="#99C225" data-ligne="2336" data-numlignepublic="12"
+            data-osmid="line:GST:12-97" data-libelle="Malzéville - Heillecourt" value="2336">12. Malzéville -
+        Heillecourt
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#33543C" data-ligne="2337" data-numlignepublic="13"
+            data-osmid="line:GST:13-97" data-libelle="Maxéville ZA Saint-Jacques - Dommartemont" value="2337">13.
+        Maxéville ZA Saint-Jacques - Dommartemont
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#229E6B" data-ligne="2338" data-numlignepublic="14"
+            data-osmid="line:GST:14-97" data-libelle="Nancy Gare-République - Ludres" value="2338">14. Nancy
+        Gare-République - Ludres
+    </option>
+
+
+    <option data-color="#000000" data-background="#70C7D2" data-ligne="2339" data-numlignepublic="15"
+            data-osmid="line:GST:15-97" data-libelle="Nancy Gare-République - Seichamps Ecoquartier" value="2339">15.
+        Nancy Gare-République - Seichamps Ecoquartier
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#1F94CB" data-ligne="2340" data-numlignepublic="16"
+            data-osmid="line:GST:16-97" data-libelle="Malzéville - Malzéville Pixerécourt - Villers Clairlieu"
+            value="2340">16. Malzéville - Malzéville Pixerécourt - Villers Clairlieu
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#3A5C88" data-ligne="2341" data-numlignepublic="17"
+            data-osmid="line:GST:17-97" data-libelle="Villers Campus Sciences - Ludres Marvingt" value="2341">17.
+        Villers Campus Sciences - Ludres Marvingt
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#000000" data-ligne="2521" data-numlignepublic="18"
+            data-osmid="line:SUB:18"
+            data-libelle="Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République" value="2521">18.
+        Pont-Saint-Vincent - Vandoeuvre Brabois Santé - Nancy Gare-République
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#593C90" data-ligne="2342" data-numlignepublic="20"
+            data-osmid="line:GST:20-97" data-libelle="Nancy Gare-République - Art-sur-Meurthe" value="2342">20. Nancy
+        Gare-République - Art-sur-Meurthe
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#963B8E" data-ligne="2343" data-numlignepublic="21"
+            data-osmid="line:GST:21-97" data-libelle="Nancy Gare-République - Fléville - Ludres Marvingt" value="2343">
+        21. Nancy Gare-République - Fléville - Ludres Marvingt
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#D2378C" data-ligne="2344" data-numlignepublic="22"
+            data-osmid="line:GST:22-97" data-libelle="Saint-Max Gérard Barrois - Essey Porte Verte" value="2344">22.
+        Saint-Max Gérard Barrois - Essey Porte Verte
+    </option>
+
+
+    <option data-color="#000000" data-background="#CCFF00" data-ligne="2447" data-numlignepublic="23"
+            data-osmid="line:SUB:23" data-libelle="Rosières-aux-Salines Gare - Vandoeuvre Vélodrome-Callot"
+            value="2447">23. Rosières-aux-Salines Gare - Vandoeuvre Vélodrome-Callot
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#009966" data-ligne="2448" data-numlignepublic="24"
+            data-osmid="line:SUB:24" data-libelle="Laneuveville Piscine - Saint-Nicolas-de-Port Filatures" value="2448">
+        24. Laneuveville Piscine - Saint-Nicolas-de-Port Filatures
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#C76B6A" data-ligne="2347" data-numlignepublic="30"
+            data-osmid="line:GST:30-97" data-libelle="Villers Campus Sciences - Laneuveville Gare" value="2347">30.
+        Villers Campus Sciences - Laneuveville Gare
+    </option>
+
+
+    <option data-color="#000000" data-background="#F6A63E" data-ligne="2349" data-numlignepublic="32"
+            data-osmid="line:GST:32-97" data-libelle="Nancy Collège Jean Lamour - Essey La Fallée" value="2349">32.
+        Nancy Collège Jean Lamour - Essey La Fallée
+    </option>
+
+
+    <option data-color="#000000" data-background="#F5CE54" data-ligne="2350" data-numlignepublic="33"
+            data-osmid="line:GST:33-97" data-libelle="Nancy Gare-République - Jarville Gabriel Fauré" value="2350">33.
+        Nancy Gare-République - Jarville Gabriel Fauré
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#4AB79B" data-ligne="2377" data-numlignepublic="Citadine 1"
+            data-osmid="line:GST:41-97" data-libelle="Citadine 1 - Citadine Nancy" value="2377">Citadine 1. Citadine 1 -
+        Citadine Nancy
+    </option>
+
+
+    <option data-color="#000000" data-background="#349DC0" data-ligne="2378" data-numlignepublic="Citadine 2"
+            data-osmid="line:GST:42-97" data-libelle="Citadine 2 - Citadine Vandoeuvre" value="2378">Citadine 2.
+        Citadine 2 - Citadine Vandoeuvre
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#E94E1B" data-ligne="2460" data-numlignepublic="50"
+            data-osmid="line:GST:50-97" data-libelle="Jarville Sion - Ludres" value="2460">50. Jarville Sion - Ludres
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#0E4194" data-ligne="2503" data-numlignepublic="51"
+            data-osmid="line:GST:51-97" data-libelle="Villers Clairlieu - Villers Lycée Stanislas" value="2503">51.
+        Villers Clairlieu - Villers Lycée Stanislas
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#EE747D" data-ligne="2504" data-numlignepublic="52"
+            data-osmid="line:GST:52-97" data-libelle="Villers George Chepfer - Villers Lycée Stanislas" value="2504">52.
+        Villers George Chepfer - Villers Lycée Stanislas
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#B23143" data-ligne="2505" data-numlignepublic="53"
+            data-osmid="line:GST:53-97" data-libelle="Malzéville le Nid - Malzéville Collège Paul Verlaine"
+            value="2505">53. Malzéville le Nid - Malzéville Collège Paul Verlaine
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#AFCB08" data-ligne="2506" data-numlignepublic="54"
+            data-osmid="line:GST:54-97" data-libelle="Dommartemont René Nicklès - Malzéville Paul Verlaine"
+            value="2506">54. Dommartemont René Nicklès - Malzéville Paul Verlaine
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#FF0000" data-ligne="2507" data-numlignepublic="55"
+            data-osmid="line:GST:55-97" data-libelle="Jarville Léon Songeur - Heillecourt Collège Montaigu"
+            value="2507">55. Jarville Léon Songeur - Heillecourt Collège Montaigu
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#7A227B" data-ligne="2466" data-numlignepublic="56"
+            data-osmid="line:GST:56-97" data-libelle="Fléville - Jarville Sion" value="2466">56. Fléville - Jarville
+        Sion
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#006666" data-ligne="2508" data-numlignepublic="57"
+            data-osmid="line:GST:57-97" data-libelle="Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot"
+            value="2508">57. Vandoeuvre Collège Simone de Beauvoir - Vélodrome-Callot
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#2DB0E5" data-ligne="2509" data-numlignepublic="58"
+            data-osmid="line:GST:58-97" data-libelle="Dommartemont René Nicklès - Tomblaine Groupe Scolaire"
+            value="2509">58. Dommartemont René Nicklès - Tomblaine Groupe Scolaire
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#0079BF" data-ligne="2510" data-numlignepublic="59"
+            data-osmid="line:GST:59-97" data-libelle="Tomblaine Groupe Scolaire - Saulxures Forêt" value="2510">59.
+        Tomblaine Groupe Scolaire - Saulxures Forêt
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#0066CC" data-ligne="2511" data-numlignepublic="60"
+            data-osmid="line:GST:60-97" data-libelle="Tomblaine Groupe Scolaire - Art-sur-Meurthe" value="2511">60.
+        Tomblaine Groupe Scolaire - Art-sur-Meurthe
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#4BB899" data-ligne="2512" data-numlignepublic="61"
+            data-osmid="line:GST:61-97" data-libelle="Nancy Gare-République - Art-sur-Meurthe - Bosserville"
+            value="2512">61. Nancy Gare-République - Art-sur-Meurthe - Bosserville
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#FF33CC" data-ligne="2513" data-numlignepublic="62"
+            data-osmid="line:GST:62-97" data-libelle="Nancy Gare-République - Malzéville Pixerécourt" value="2513">62.
+        Nancy Gare-République - Malzéville Pixerécourt
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#E72086" data-ligne="2514" data-numlignepublic="63"
+            data-osmid="line:GST:63-97" data-libelle="Laxou Jet d'Eau - Laxou Collège Victor Prouvé" value="2514">63.
+        Laxou Jet d'Eau - Laxou Collège Victor Prouvé
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#7E76B5" data-ligne="2515" data-numlignepublic="64"
+            data-osmid="line:GST:64-97" data-libelle="Nancy Tilleul Argenté - Georges de la Tour" value="2515">64. Nancy
+        Tilleul Argenté - Georges de la Tour
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#1B9CA4" data-ligne="2516" data-numlignepublic="65"
+            data-osmid="line:GST:65-97" data-libelle="Malzéville Margeville - Nancy Division de Fer" value="2516">65.
+        Malzéville Margeville - Nancy Division de Fer
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#82A8BC" data-ligne="2517" data-numlignepublic="66"
+            data-osmid="line:GST:66-97" data-libelle="Villers Lycée Stanislas - Fléville" value="2517">66. Villers Lycée
+        Stanislas - Fléville
+    </option>
+
+
+    <option data-color="#FFFFFF" data-background="#F7A703" data-ligne="2518" data-numlignepublic="67"
+            data-osmid="line:GST:67-97" data-libelle="Ludres Collège Jacques Monod - Fléville l'Orée du Bois"
+            value="2518">67. Ludres Collège Jacques Monod - Fléville l'Orée du Bois
+    </option>
+
+
+</select>

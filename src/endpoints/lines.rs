@@ -5,7 +5,6 @@ use axum::routing::get;
 use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
 use scraper::{Html, Selector};
-use sha2::digest::typenum::assert_type;
 
 pub const STAN_API_LINES_URL: &str = "https://www.reseau-stan.com/";
 
