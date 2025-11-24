@@ -9,14 +9,15 @@ use axum::Router;
 use axum::routing::get;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
+use std::fs;
 
 pub mod endpoints;
 pub mod entities;
 pub mod navitia_token;
 pub mod utils;
 
-pub async fn welcome() -> &'static str {
-    "Hello, world!"
+pub async fn great() -> String {
+    fs::read_to_string("./assets/greetings.txt").unwrap_or_default()
 }
 
 /// Creates a rooter for Axum with the correct client configuration, endpoints and state
@@ -29,7 +30,7 @@ pub fn init_router() -> anyhow::Result<Router> {
         .build()?;
     let state = ApiState { client };
     let router = Router::new()
-        .route("/", get(welcome))
+        .route("/", get(great))
         .nest("/lines", endpoints::lines::router())
         .nest("/stops", endpoints::stops::router())
         .nest("/arrivals", endpoints::arrivals::router())

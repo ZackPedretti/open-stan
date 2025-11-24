@@ -1,0 +1,31 @@
+[FR]
+Bienvenue sur Open STAN - REST API ! 🚌
+
+Open STAN est une API REST open-source offrant un accès aux données de transport public du réseau de bus STAN à Nancy, en France. Cette API est conçue pour les développeurs, les chercheurs ou toute personne souhaitant explorer les lignes de bus, les arrêts et les informations d'arrivée en temps réel.
+
+Avec Open STAN, vous pouvez :
+- Obtenir des informations sur les lignes de bus et leurs horaires
+- Explorer tous les arrêts du réseau
+- Accéder aux arrivées en temps réel à n'importe quel arrêt
+
+Notre objectif est de rendre les données de STAN plus accessibles, d'encourager la transparence et de permettre la création d'outils et d'applications innovants pour la communauté de Nancy.
+
+La documentation complète, incluant les endpoints disponibles, des exemples de requêtes et le format des réponses, est disponible à : /docs
+
+Open STAN est gratuit et open-source, sous licence MIT ou Apache 2.0. Les contributions, rapports de bugs et demandes de fonctionnalités sont toujours les bienvenus !
+
+[EN]
+Welcome to Open STAN - REST API! 🚌
+
+Open STAN is an open-source REST API providing access to public transport data from the STAN bus network in Nancy, France. This API is designed for developers, researchers, or anyone interested in exploring bus lines, stops, and real-time arrival information.
+
+With Open STAN you can:
+- Retrieve information about bus lines and schedules
+- Explore all bus stops in the network
+- Get real-time arrivals at any stop
+
+Our goal is to make STAN’s data more accessible, encourage transparency, and enable the creation of innovative tools and apps for the Nancy community.
+
+Full documentation, including available endpoints, request examples, and response formats, is available at: /docs
+
+Open STAN is free and open-source, licensed under MIT or Apache 2.0. Contributions, bug reports, and feature requests are always welcome!
