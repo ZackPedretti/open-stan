@@ -1,4 +1,4 @@
-use crate::endpoints::lines::request_lines;
+use crate::endpoints::lines::{request_lines, STAN_API_LINES_URL};
 use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::api_state::ApiState;
 use crate::entities::arrival::Arrival;
@@ -46,7 +46,7 @@ async fn request_remaining_times_to_stop(
         .text()
         .await?;
 
-    let all_lines = request_lines(client).await?;
+    let all_lines = request_lines(client, STAN_API_LINES_URL).await?;
 
     let specified_line = line.and_then(|l| get_line_from_attribute(&l, &all_lines));
 

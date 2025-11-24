@@ -1,4 +1,4 @@
-use crate::endpoints::lines::request_lines;
+use crate::endpoints::lines::{request_lines, STAN_API_LINES_URL};
 use crate::entities::api_query_args::GetStopOfLineQueryArgs;
 use crate::entities::api_state::ApiState;
 use crate::entities::stop::Stop;
@@ -63,7 +63,7 @@ struct StopsResponse {
 }
 
 async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
-    let lines = request_lines(client).await?;
+    let lines = request_lines(client, STAN_API_LINES_URL).await?;
     let x_auth_token = create_token();
     println!("{x_auth_token}");
     let mut all_stops: HashSet<Stop> = HashSet::new();
