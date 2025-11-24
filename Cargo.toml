@@ -2,6 +2,7 @@
 name = "open-stan"
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache 2.0"
 description = "Lightweight open-source implementation of the STAN API, exposing endpoints for bus lines, stops, and real-time arrivals."
 repository = "https://github.com/ZackPedretti/open-stan"
 keywords = ["rest", "api", "bus", "realtime", "nancy"]
@@ -10,9 +11,6 @@ categories = [
     "web-programming",
     "network-programming"
 ]
-
-[licenses]
-allow = ["MIT", "Apache-2.0", "MIT OR Apache-2.0"]
 
 [dependencies]
 axum = { version = "0.8.6", features = ["macros"] }
