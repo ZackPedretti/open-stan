@@ -48,7 +48,7 @@ pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
             number: get("value").parse()?,
             name: get("data-libelle"),
             code: get("data-numlignepublic"),
-            color: get("data-backgroundcolor"),
+            color: get("data-background"),
             text_color: get("data-color"),
         };
 
