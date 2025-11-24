@@ -20,19 +20,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Install Rust using the supported action
       - uses: dtolnay/rust-toolchain@stable
         with:
           profile: minimal
 
-      # Proper Rust caching
       - uses: Swatinem/rust-cache@v2
 
-      # Run cargo audit (with correct permissions)
       - name: Run cargo audit
         uses: rustsec/audit-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          annotate: false
+          create-issue: false
+          fail-on-warnings: false
 
       - name: Run cargo deny
         uses: EmbarkStudios/cargo-deny-action@v1
