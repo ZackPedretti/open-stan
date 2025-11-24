@@ -2,53 +2,47 @@ name: Rust
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # --- Caching ---
-    - name: Cache Cargo registry and git index
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-        key: cargo-registry-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: cargo-registry-
+      # Caches the entire Rust toolchain + cargo registry + target/
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
 
-    - name: Cache Cargo build
-      uses: actions/cache@v3
-      with:
-        path: target
-        key: cargo-build-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: cargo-build-
-      # ----------------
+      - uses: Swatinem/rust-cache@v2
 
-    - name: Install cargo audit, cargo-deny, cargo-tarpaulin
-      run: cargo install cargo-audit cargo-deny cargo-tarpaulin
+      # Use prebuilt tools instead of compiling 400 crates
+      - name: Run cargo audit
+        uses: rustsec/audit-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Security check
-      run: cargo audit
+      - name: Run cargo deny
+        uses: EmbarkStudios/cargo-deny-action@v1
 
-    - name: Dependency policy check
-      run: cargo deny check
+      # Optional: install tarpaulin (fast, prebuilt)
+      - name: Install tarpaulin
+        run: |
+          curl -sSfLo tarpaulin.tar.gz \
+            https://github.com/xd009642/tarpaulin/releases/latest/download/cargo-tarpaulin-x86_64-unknown-linux-gnu.tar.gz
+          tar xzf tarpaulin.tar.gz -C ~/.cargo/bin
 
-    # - name: Test coverage gate
-    #   run: cargo tarpaulin --fail-under 60
+      # - name: Test coverage gate
+      #   run: cargo tarpaulin --fail-under 60
 
-    - name: Build
-      run: | 
-        cargo chef prepare --recipe-path recipe.json
-        cargo chef cook --recipe-path recipe.json
-        cargo build --release
+      - name: Build
+        run: cargo build --release
