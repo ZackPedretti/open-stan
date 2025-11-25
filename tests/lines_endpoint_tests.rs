@@ -50,5 +50,5 @@ async fn integration_test() {
     let body = to_bytes(response.into_body(), 1024 * 1024).await.unwrap();
     let lines: Vec<Line> = serde_json::from_slice(&body).unwrap();
     assert_ne!(lines.len(), 0);
-    assert!(lines.len() > 10);
+    assert_eq!(lines.len(), 43);
 }

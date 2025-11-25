@@ -21,3 +21,5 @@ target
 #.idea/
 /stan-api/
 /.env
+tests/stops_endpoint_tests.rs
+tests/data/stops.json
