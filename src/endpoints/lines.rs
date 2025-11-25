@@ -12,7 +12,16 @@ pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_lines))
 }
 
-#[utoipa::path(get, path = "/lines")]
+#[utoipa::path(
+    get,
+    path = "/lines",
+    responses(
+        (status = 200, description = "List of lines", body = [Line]),
+    ),
+    tag = "lines",
+    description = "Retrieve bus lines."
+)]
+
 pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
     match request_lines(&state.client, STAN_API_LINES_URL).await {
         Ok(v) => Json(v).into_response(),
@@ -40,7 +49,7 @@ fn parse_document_into_lines(html: &str) -> anyhow::Result<Vec<Line>> {
         }
     };
     
-    let document = Html::parse_document(&html);
+    let document = Html::parse_document(html);
 
     for elt in document.select(&line_options_selector) {
         if elt.value().attr("disabled").is_some() {
