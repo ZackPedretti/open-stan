@@ -17,11 +17,16 @@ jobs:
       pull-requests: write
 
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Install cargo-audit
+        run: cargo install cargo-audit
+
       - name: Disable git commit verification
         run: git config --global commit.gpgSign false
 
       - name: Run cargo audit fix
-        uses: simonhyll/cargo-audit@v1
+        run: cargo audit fix
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
@@ -33,6 +38,7 @@ jobs:
           body: >
             Updates to Cargo.toml and/or Cargo.lock with security fixes.
           labels: automated pr
+
 
   cargo-deny:
     runs-on: ubuntu-latest
