@@ -6,8 +6,6 @@ use axum::{Json, Router};
 use reqwest::{Client, StatusCode};
 use scraper::{Html, Selector};
 
-pub const STAN_API_LINES_URL: &str = "https://www.reseau-stan.com/";
-
 pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_lines))
 }
@@ -23,7 +21,7 @@ pub fn router() -> Router<ApiState> {
 )]
 
 pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
-    match request_lines(&state.client, STAN_API_LINES_URL).await {
+    match request_lines(&state.client).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
     }
@@ -34,8 +32,8 @@ pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
 ///
 /// # Errors
 /// Returns an `anyhow::Error` if an error happened during requesting or parsing the HTML
-pub async fn request_lines(client: &Client, url: &str) -> anyhow::Result<Vec<Line>> {
-    let html = client.get(url).send().await?.text().await?;
+pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
+    let html = client.get("https://www.reseau-stan.com/").send().await?.text().await?;
 
     parse_document_into_lines(&html)
 }

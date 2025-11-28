@@ -1,9 +1,10 @@
-use crate::endpoints::lines::{request_lines, STAN_API_LINES_URL};
-use crate::entities::api_query_args::GetStopOfLineQueryArgs;
+use crate::endpoints::lines::request_lines;
 use crate::entities::ApiState;
 use crate::entities::Stop;
+use crate::entities::api_query_args::GetStopOfLineQueryArgs;
 use crate::navitia_token::create_token;
-use crate::utils::request_presigned_navitia_url;
+use crate::utils::{get_line_from_attribute, request_presigned_navitia_url};
+use anyhow::anyhow;
 use axum::extract::{Query, State};
 use axum::response::IntoResponse;
 use axum::routing::get;
@@ -53,8 +54,12 @@ async fn get_stops_of_line(
 ) -> anyhow::Result<Vec<Stop>> {
     let x_auth_token = create_token();
     let presigned_url = request_presigned_stops_of_line(client, &line, &x_auth_token).await?;
-
-    request_stops_of_line(line, presigned_url, client, &x_auth_token).await
+    let all_lines = request_lines(client).await?;
+    let line = get_line_from_attribute(&line, &all_lines);
+    match line {
+        None => Err(anyhow!("Invalid line argument")),
+        Some(line) => request_stops_of_line(line.id, presigned_url, client, &x_auth_token).await,
+    }
 }
 
 #[derive(Deserialize, Debug)]
@@ -63,7 +68,7 @@ struct StopsResponse {
 }
 
 async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
-    let lines = request_lines(client, STAN_API_LINES_URL).await?;
+    let lines = request_lines(client).await?;
     let x_auth_token = create_token();
     let mut all_stops: HashSet<Stop> = HashSet::new();
 
@@ -115,8 +120,11 @@ async fn request_stops_of_line(
 
     match json_response {
         Ok(r) => Ok(r.stop_areas),
-        Err(_) => Err(anyhow::anyhow!(
-            "Was unable to parse JSON response. Could be due to an error returned by the Navitia API."
-        )),
+        Err(e) => {
+            println!("{}", e.to_string());
+            Err(anyhow::anyhow!(
+                "Was unable to parse JSON response. Could be due to an error returned by the Navitia API."
+            ))
+        }
     }
 }

@@ -1,7 +1,7 @@
-use crate::endpoints::lines::{STAN_API_LINES_URL, request_lines};
-use crate::entities::{ApiState, Arrival, Stop};
+use crate::endpoints::lines::request_lines;
 use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::line::{ArrivalLineInfo, PartialLineInfo};
+use crate::entities::{ApiState, Arrival, Stop};
 use crate::utils::{get_line_from_attribute, get_stan_api_calls_headers, get_style_value_from_elt};
 use axum::extract::{Query, State};
 use axum::response::IntoResponse;
@@ -44,7 +44,7 @@ async fn request_remaining_times_to_stop(
         .text()
         .await?;
 
-    let all_lines = request_lines(client, STAN_API_LINES_URL).await?;
+    let all_lines = request_lines(client).await?;
 
     let specified_line = line.and_then(|l| get_line_from_attribute(&l, &all_lines));
 
