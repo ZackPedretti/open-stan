@@ -16,7 +16,21 @@ pub fn router() -> Router<ApiState> {
     router
 }
 
-#[utoipa::path(get, path = "/arrivals")]
+#[utoipa::path(
+    get,
+    path = "/arrivals",
+    params(("stop" = String, Query, 
+         description = "Stop identifier (example: `stop_point:GST:SP:TRBLA`). Stop identifiers are returned by the `/stops` endpoint."),
+        ("line" = Option<String>, Query, 
+         description = "Optional line identifier (ID, number, or code). If provided, returns arrivals only for this line; otherwise, returns all arrivals for the selected stop.")
+    ),
+    responses(
+        (status = 200, description = "List of arrivals", body = [Arrival]),
+    ),
+    tag = "arrivals",
+    description = "Retrieve bus arrivals for a specific stop. Supports optional filtering by line."
+)]
+
 pub async fn get_arrivals(
     State(state): State<ApiState>,
     Query(query): Query<GetRemainingTimeToStopQueryArgs>,
@@ -74,7 +88,7 @@ async fn request_remaining_times_to_stop(
                 time: t,
                 direction: direction.clone(),
                 static_time: is_static_time,
-                line_info: line.clone(),
+                line: line.clone(),
             });
         }
     }

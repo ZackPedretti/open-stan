@@ -1144,7 +1144,6 @@ dependencies = [
  "serde_json",
  "sha2",
  "tokio",
- "tower",
  "utoipa",
  "utoipa-swagger-ui",
  "uuid",
