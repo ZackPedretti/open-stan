@@ -1,7 +1,7 @@
 use crate::endpoints::lines::{request_lines, STAN_API_LINES_URL};
 use crate::entities::api_query_args::GetStopOfLineQueryArgs;
-use crate::entities::api_state::ApiState;
-use crate::entities::stop::Stop;
+use crate::entities::ApiState;
+use crate::entities::Stop;
 use crate::navitia_token::create_token;
 use crate::utils::request_presigned_navitia_url;
 use axum::extract::{Query, State};

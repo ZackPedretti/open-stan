@@ -1,6 +1,11 @@
 pub mod api_doc;
+pub use api_doc::ApiDoc;
 pub mod api_query_args;
 pub mod api_state;
+pub use api_state::ApiState;
 pub mod arrival;
+pub use arrival::Arrival;
 pub mod line;
+pub use line::Line;
 pub mod stop;
+pub use stop::Stop;

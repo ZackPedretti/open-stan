@@ -1,4 +1,4 @@
-use crate::entities::{api_state::ApiState, line::Line};
+use crate::entities::{ApiState, Line};
 use axum::extract::State;
 use axum::response::IntoResponse;
 use axum::routing::get;
