@@ -1,0 +1,3677 @@
+{
+  "origins": [],
+  "terminus": [],
+  "context": {
+    "current_datetime": "20251125T203441",
+    "timezone": "Europe/Paris"
+  },
+  "stop_areas": [
+    {
+      "id": "stop_area:GST:SA:TRBLA",
+      "name": "ARTEM - Blandan - Thermal",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRBLA"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "ARTEM - Blandan - Thermal (Nancy)",
+      "coord": {
+        "lon": "6.172467",
+        "lat": "48.672035"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7874178",
+          "name": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "level": 10,
+          "zip_code": "",
+          "label": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "insee": "",
+          "coord": {
+            "lon": "6.174666",
+            "lat": "48.676803"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:5-97",
+          "name": "Maxéville Meurthe Canal - Vandoeuvre Roberval",
+          "code": "T5",
+          "color": "421782",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "89771d08-c6bc-11f0-86e5-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:43",
+          "name": "Ligne Pleine Lune",
+          "code": "PLEINE LUNE",
+          "color": "FFED00",
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "source",
+              "value": "43"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "013000",
+          "closing_time": "050000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRPAS",
+      "name": "Clinique Pasteur",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:26"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:26"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RSG3:SA:26"
+        },
+        {
+          "type": "source",
+          "value": "TRPAS"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Clinique Pasteur (Essey-lès-Nancy)",
+      "coord": {
+        "lon": "6.217148",
+        "lat": "48.703242"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54184",
+          "name": "Essey-lès-Nancy",
+          "level": 8,
+          "zip_code": "54270",
+          "label": "Essey-lès-Nancy (54270)",
+          "insee": "54184",
+          "coord": {
+            "lon": "6.222076",
+            "lat": "48.705317"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RSG3:Resago_3",
+          "name": "resago 3",
+          "code": "resago 3",
+          "color": "",
+          "text_color": "",
+          "codes": [
+            {
+              "type": "source",
+              "value": "Resago_3"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "070000",
+          "closing_time": "185000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "fa262338-84b7-11f0-9711-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRCRI",
+      "name": "Cristalleries - Stade M. Picot",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRCRI"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Cristalleries - Stade M. Picot (Nancy)",
+      "coord": {
+        "lon": "6.198825",
+        "lat": "48.697525"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7853214",
+          "name": "Rives de Meurthe",
+          "level": 10,
+          "zip_code": "",
+          "label": "Rives de Meurthe",
+          "insee": "",
+          "coord": {
+            "lon": "6.196458",
+            "lat": "48.692561"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRRIV",
+      "name": "Deux Rives - O. de Gouges",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRRIV"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Deux Rives - O. de Gouges (Nancy)",
+      "coord": {
+        "lon": "6.195377",
+        "lat": "48.695698"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7853214",
+          "name": "Rives de Meurthe",
+          "level": 10,
+          "zip_code": "",
+          "label": "Rives de Meurthe",
+          "insee": "",
+          "coord": {
+            "lon": "6.196458",
+            "lat": "48.692561"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:NYDFE",
+      "name": "Division de Fer",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:20"
+        },
+        {
+          "type": "secondary_id",
+          "value": "GST:SA:TRDFE"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:20"
+        },
+        {
+          "type": "source",
+          "value": "NYDFE"
+        },
+        {
+          "type": "source",
+          "value": "TRDFE"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Division de Fer (Nancy)",
+      "coord": {
+        "lon": "6.190412",
+        "lat": "48.692883"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7853214",
+          "name": "Rives de Meurthe",
+          "level": 10,
+          "zip_code": "",
+          "label": "Rives de Meurthe",
+          "insee": "",
+          "coord": {
+            "lon": "6.196458",
+            "lat": "48.692561"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:65-97",
+          "name": "Malzéville Margeville - Nancy Division de Fer",
+          "code": "65",
+          "color": "1B9CA4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "071700",
+          "closing_time": "074300",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRESS",
+      "name": "Essey Centre",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRESS"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Essey Centre (Essey-lès-Nancy)",
+      "coord": {
+        "lon": "6.221468",
+        "lat": "48.703651"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54184",
+          "name": "Essey-lès-Nancy",
+          "level": 8,
+          "zip_code": "54270",
+          "label": "Essey-lès-Nancy (54270)",
+          "insee": "54184",
+          "coord": {
+            "lon": "6.222076",
+            "lat": "48.705317"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRMZM",
+      "name": "Essey Mouzimpré",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:28"
+        },
+        {
+          "type": "secondary_id",
+          "value": "GST:SA:ESMZM"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:28"
+        },
+        {
+          "type": "source",
+          "value": "ESMZM"
+        },
+        {
+          "type": "source",
+          "value": "TRMZM"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Essey Mouzimpré (Essey-lès-Nancy)",
+      "coord": {
+        "lon": "6.224797",
+        "lat": "48.701538"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54184",
+          "name": "Essey-lès-Nancy",
+          "level": 8,
+          "zip_code": "54270",
+          "label": "Essey-lès-Nancy (54270)",
+          "insee": "54184",
+          "coord": {
+            "lon": "6.222076",
+            "lat": "48.705317"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:3-97",
+          "name": "Villers Campus Sciences  - Seichamps Haie Cerlin",
+          "code": "T3",
+          "color": "008080",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "010800",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "cf58b566-735b-11f0-b3e4-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:32-97",
+          "name": "Nancy Collège Jean Lamour - Essey La Fallée",
+          "code": "32",
+          "color": "F6A63E",
+          "text_color": "000000",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "071000",
+          "closing_time": "182900",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "ddf31084-f9ae-11ef-acda-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TREXE",
+      "name": "Exelmans",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:11"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:11"
+        },
+        {
+          "type": "source",
+          "value": "TREXE"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Exelmans (Nancy)",
+      "coord": {
+        "lon": "6.17585",
+        "lat": "48.675125"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7874178",
+          "name": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "level": 10,
+          "zip_code": "",
+          "label": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "insee": "",
+          "coord": {
+            "lon": "6.174666",
+            "lat": "48.676803"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:5-97",
+          "name": "Maxéville Meurthe Canal - Vandoeuvre Roberval",
+          "code": "T5",
+          "color": "421782",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "89771d08-c6bc-11f0-86e5-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:43",
+          "name": "Ligne Pleine Lune",
+          "code": "PLEINE LUNE",
+          "color": "FFED00",
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "source",
+              "value": "43"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "013000",
+          "closing_time": "050000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRGAR",
+      "name": "Gare - Pierre Semard",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:17"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:17"
+        },
+        {
+          "type": "source",
+          "value": "TRGAR"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Gare - Pierre Semard (Nancy)",
+      "coord": {
+        "lon": "6.177214",
+        "lat": "48.689115"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7877110",
+          "name": "Saint-Nicolas - Charles III - Ville vieille - Trois Maisons - Léopold",
+          "level": 10,
+          "zip_code": "",
+          "label": "Saint-Nicolas - Charles III - Ville vieille - Trois Maisons - Léopold",
+          "insee": "",
+          "coord": {
+            "lon": "6.180134",
+            "lat": "48.694774"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:NYKEN",
+      "name": "Gare - Saint-Léon",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "GST:SA:TRLEO"
+        },
+        {
+          "type": "source",
+          "value": "NYKEN"
+        },
+        {
+          "type": "source",
+          "value": "TRLEO"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Gare - Saint-Léon (Nancy)",
+      "coord": {
+        "lon": "6.173196",
+        "lat": "48.688353"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7879487",
+          "name": "Poincaré - Foch - Anatole France - Croix de Bourgogne",
+          "level": 10,
+          "zip_code": "",
+          "label": "Poincaré - Foch - Anatole France - Croix de Bourgogne",
+          "insee": "",
+          "coord": {
+            "lon": "6.166494",
+            "lat": "48.688158"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:2-97",
+          "name": "Laxou Sapinière - Laneuveville Centre",
+          "code": "T2",
+          "color": "0000FF",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "043000",
+          "closing_time": "005700",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "1a9f1492-b8a9-11f0-b2c4-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:3-97",
+          "name": "Villers Campus Sciences  - Seichamps Haie Cerlin",
+          "code": "T3",
+          "color": "008080",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "010800",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "cf58b566-735b-11f0-b3e4-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:4-97",
+          "name": "Laxou Champ-le-Boeuf - Houdemont Porte Sud",
+          "code": "T4",
+          "color": "FFDD04",
+          "text_color": "000000",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005800",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:7",
+          "name": "Laxou Plateau de Haye - Laxou Plateau de Haye",
+          "code": "Corol",
+          "color": "83171A",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "7"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "053000",
+          "closing_time": "223400",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "cf58b566-735b-11f0-b3e4-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:11-97",
+          "name": "Saulxures Jardins Fleuris - Tomblaine - Heillecourt La Rotonde",
+          "code": "11",
+          "color": "FF7900",
+          "text_color": "000000",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "055900",
+          "closing_time": "214600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "e2e752c8-c120-11f0-b654-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:16-97",
+          "name": "Malzéville - Malzéville Pixerécourt - Villers Clairlieu",
+          "code": "16",
+          "color": "1F94CB",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "060000",
+          "closing_time": "214500",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "a08ab402-c615-11f0-b654-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "ddf31084-f9ae-11ef-acda-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:43",
+          "name": "Ligne Pleine Lune",
+          "code": "PLEINE LUNE",
+          "color": "FFED00",
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "source",
+              "value": "43"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "013000",
+          "closing_time": "050000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRGAN",
+      "name": "Garenne - Rose Wild",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRGAN"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Garenne - Rose Wild (Nancy)",
+      "coord": {
+        "lon": "6.178511",
+        "lat": "48.681217"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7874178",
+          "name": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "level": 10,
+          "zip_code": "",
+          "label": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "insee": "",
+          "coord": {
+            "lon": "6.174666",
+            "lat": "48.676803"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:NYCLM",
+      "name": "Jean Jaurès",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "GST:SA:TRJAU"
+        },
+        {
+          "type": "source",
+          "value": "NYCLM"
+        },
+        {
+          "type": "source",
+          "value": "TRJAU"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Jean Jaurès (Nancy)",
+      "coord": {
+        "lon": "6.180677",
+        "lat": "48.679394"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7874178",
+          "name": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "level": 10,
+          "zip_code": "",
+          "label": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "insee": "",
+          "coord": {
+            "lon": "6.174666",
+            "lat": "48.676803"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:4-97",
+          "name": "Laxou Champ-le-Boeuf - Houdemont Porte Sud",
+          "code": "T4",
+          "color": "FFDD04",
+          "text_color": "000000",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005800",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:5-97",
+          "name": "Maxéville Meurthe Canal - Vandoeuvre Roberval",
+          "code": "T5",
+          "color": "421782",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "89771d08-c6bc-11f0-86e5-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:14-97",
+          "name": "Nancy Gare-République - Ludres",
+          "code": "14exp",
+          "color": "229E6B",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "061000",
+          "closing_time": "214900",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:43",
+          "name": "Ligne Pleine Lune",
+          "code": "PLEINE LUNE",
+          "color": "FFED00",
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "source",
+              "value": "43"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "013000",
+          "closing_time": "050000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRREC",
+      "name": "Le Reclus",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:6"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:6"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RSG2:SA:2809"
+        },
+        {
+          "type": "secondary_id",
+          "value": "SUB:SA:VANRECL"
+        },
+        {
+          "type": "source",
+          "value": "TRREC"
+        },
+        {
+          "type": "source",
+          "value": "VANRECL"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Le Reclus (Vandœuvre-lès-Nancy)",
+      "coord": {
+        "lon": "6.161903",
+        "lat": "48.662461"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54547",
+          "name": "Vandœuvre-lès-Nancy",
+          "level": 8,
+          "zip_code": "54500",
+          "label": "Vandœuvre-lès-Nancy (54500)",
+          "insee": "54547",
+          "coord": {
+            "lon": "6.172461",
+            "lat": "48.659967"
+          }
+        },
+        {
+          "id": "admin:osm:relation:11225833",
+          "name": "Reclus",
+          "level": 10,
+          "zip_code": "",
+          "label": "Reclus",
+          "insee": "",
+          "coord": {
+            "lon": "6.161718",
+            "lat": "48.663232"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:SUB:100",
+          "name": "PONT SAINT VINCENT <> VANDOEUVRE",
+          "code": "100",
+          "color": "FF0066",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "100"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:SUB",
+            "name": "SUB",
+            "links": []
+          },
+          "opening_time": "070800",
+          "closing_time": "185100",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RSG2:Resago_2",
+          "name": "resago 2",
+          "code": "resago 2",
+          "color": "",
+          "text_color": "",
+          "codes": [
+            {
+              "type": "source",
+              "value": "Resago_2"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "070000",
+          "closing_time": "185000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRMAX",
+      "name": "Mairie de Saint-Max",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRMAX"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Mairie de Saint-Max (Saint-Max)",
+      "coord": {
+        "lon": "6.207763",
+        "lat": "48.700554"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54482",
+          "name": "Saint-Max",
+          "level": 8,
+          "zip_code": "54130",
+          "label": "Saint-Max (54130)",
+          "insee": "54482",
+          "coord": {
+            "lon": "6.207437",
+            "lat": "48.700554"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:22-97",
+          "name": "Saint-Max Gérard Barrois - Essey Porte Verte",
+          "code": "22",
+          "color": "D2378C",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "070000",
+          "closing_time": "200100",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRMDE",
+      "name": "Mon Désert - Thermal",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRMDE"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Mon Désert - Thermal (Nancy)",
+      "coord": {
+        "lon": "6.176431",
+        "lat": "48.684385"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7879487",
+          "name": "Poincaré - Foch - Anatole France - Croix de Bourgogne",
+          "level": 10,
+          "zip_code": "",
+          "label": "Poincaré - Foch - Anatole France - Croix de Bourgogne",
+          "insee": "",
+          "coord": {
+            "lon": "6.166494",
+            "lat": "48.688158"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRMTO",
+      "name": "Montet Octroi",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "FSO:SA:9"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RMA:SA:9"
+        },
+        {
+          "type": "secondary_id",
+          "value": "RSG2:SA:9"
+        },
+        {
+          "type": "source",
+          "value": "TRMTO"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Montet Octroi (Nancy)",
+      "coord": {
+        "lon": "6.168569",
+        "lat": "48.668444"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7874178",
+          "name": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "level": 10,
+          "zip_code": "",
+          "label": "Haussonville - Blandan - Mon Désert - Saurupt",
+          "insee": "",
+          "coord": {
+            "lon": "6.174666",
+            "lat": "48.676803"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:5-97",
+          "name": "Maxéville Meurthe Canal - Vandoeuvre Roberval",
+          "code": "T5",
+          "color": "421782",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "050000",
+          "closing_time": "005000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            },
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "89771d08-c6bc-11f0-86e5-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:GST:43",
+          "name": "Ligne Pleine Lune",
+          "code": "PLEINE LUNE",
+          "color": "FFED00",
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "source",
+              "value": "43"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "013000",
+          "closing_time": "050000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RMA:resago_matin",
+          "name": "resago_matin",
+          "code": "resago matin",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "042000",
+          "closing_time": "060000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:FSO:flexo_soiree",
+          "name": "flexo_soiree",
+          "code": "flexo soiree",
+          "color": "A372C4",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "flexo_soiree"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "213000",
+          "closing_time": "012000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        },
+        {
+          "id": "line:RSG2:Resago_2",
+          "name": "resago 2",
+          "code": "resago 2",
+          "color": "",
+          "text_color": "",
+          "codes": [
+            {
+              "type": "source",
+              "value": "Resago_2"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:tadstan",
+            "name": "resago2",
+            "links": [],
+            "codes": [
+              {
+                "type": "source",
+                "value": "resago1"
+              },
+              {
+                "type": "source",
+                "value": "resago2"
+              },
+              {
+                "type": "source",
+                "value": "resago3"
+              }
+            ]
+          },
+          "opening_time": "070000",
+          "closing_time": "185000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRNDP",
+      "name": "Notre-Dame-des-Pauvres",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRNDP"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Notre-Dame-des-Pauvres (Vandœuvre-lès-Nancy)",
+      "coord": {
+        "lon": "6.155493",
+        "lat": "48.657396"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54547",
+          "name": "Vandœuvre-lès-Nancy",
+          "level": 8,
+          "zip_code": "54500",
+          "label": "Vandœuvre-lès-Nancy (54500)",
+          "insee": "54547",
+          "coord": {
+            "lon": "6.172461",
+            "lat": "48.659967"
+          }
+        },
+        {
+          "id": "admin:osm:relation:11226471",
+          "name": "Brabois",
+          "level": 10,
+          "zip_code": "",
+          "label": "Brabois",
+          "insee": "",
+          "coord": {
+            "lon": "6.147637",
+            "lat": "48.650886"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRPBR",
+      "name": "Parc de Brabois",
+      "codes": [
+        {
+          "type": "secondary_id",
+          "value": "SUB:SA:VANFAIS"
+        },
+        {
+          "type": "source",
+          "value": "TRPBR"
+        },
+        {
+          "type": "source",
+          "value": "VANFAIS"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Parc de Brabois (Vandœuvre-lès-Nancy)",
+      "coord": {
+        "lon": "6.152313",
+        "lat": "48.653897"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54547",
+          "name": "Vandœuvre-lès-Nancy",
+          "level": 8,
+          "zip_code": "54500",
+          "label": "Vandœuvre-lès-Nancy (54500)",
+          "insee": "54547",
+          "coord": {
+            "lon": "6.172461",
+            "lat": "48.659967"
+          }
+        },
+        {
+          "id": "admin:osm:relation:11226471",
+          "name": "Brabois",
+          "level": 10,
+          "zip_code": "",
+          "label": "Brabois",
+          "insee": "",
+          "coord": {
+            "lon": "6.147637",
+            "lat": "48.650886"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        },
+        {
+          "id": "line:SUB:100",
+          "name": "PONT SAINT VINCENT <> VANDOEUVRE",
+          "code": "100",
+          "color": "FF0066",
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "source",
+              "value": "100"
+            }
+          ],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:SUB",
+            "name": "SUB",
+            "links": []
+          },
+          "opening_time": "070800",
+          "closing_time": "185100",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "stop_area:GST:SA:TRCAT",
+      "name": "Place Stanislas - Cath drale",
+      "codes": [
+        {
+          "type": "source",
+          "value": "TRCAT"
+        }
+      ],
+      "timezone": "Europe/Paris",
+      "label": "Place Stanislas - Cath drale (Nancy)",
+      "coord": {
+        "lon": "6.185661",
+        "lat": "48.691819"
+      },
+      "links": [],
+      "commercial_modes": [
+        {
+          "id": "commercial_mode:Bus",
+          "name": "Bus"
+        }
+      ],
+      "physical_modes": [
+        {
+          "id": "physical_mode:Bus",
+          "name": "Bus",
+          "co2_emission_rate": {
+            "value": 132,
+            "unit": "gEC/Km"
+          }
+        }
+      ],
+      "administrative_regions": [
+        {
+          "id": "admin:fr:54395",
+          "name": "Nancy",
+          "level": 8,
+          "zip_code": "54000;54100",
+          "label": "Nancy (54000-54100)",
+          "insee": "54395",
+          "coord": {
+            "lon": "6.183409",
+            "lat": "48.693722"
+          }
+        },
+        {
+          "id": "admin:osm:relation:7877110",
+          "name": "Saint-Nicolas - Charles III - Ville vieille - Trois Maisons - Léopold",
+          "level": 10,
+          "zip_code": "",
+          "label": "Saint-Nicolas - Charles III - Ville vieille - Trois Maisons - Léopold",
+          "insee": "",
+          "coord": {
+            "lon": "6.180134",
+            "lat": "48.694774"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "line:GST:1-97",
+          "name": "Vandoeuvre Brabois Hôpitaux - Essey Mouzimpré",
+          "code": "T1",
+          "color": "E30613",
+          "text_color": "FFFFFF",
+          "codes": [],
+          "physical_modes": [
+            {
+              "id": "physical_mode:Bus",
+              "name": "Bus"
+            }
+          ],
+          "commercial_mode": {
+            "id": "commercial_mode:Bus",
+            "name": "Bus"
+          },
+          "network": {
+            "id": "network:STAN",
+            "name": "STAN Nancy",
+            "links": []
+          },
+          "opening_time": "040000",
+          "closing_time": "005600",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "links": [
+            {
+              "templated": false,
+              "rel": "disruptions",
+              "internal": true,
+              "type": "disruption",
+              "id": "040f6748-c9ea-11f0-a8ed-0a58a9feac02"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
