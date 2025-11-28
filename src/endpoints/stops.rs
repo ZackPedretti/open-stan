@@ -121,7 +121,7 @@ async fn request_stops_of_line(
     match json_response {
         Ok(r) => Ok(r.stop_areas),
         Err(e) => {
-            println!("{}", e.to_string());
+            println!("{}", e);
             Err(anyhow::anyhow!(
                 "Was unable to parse JSON response. Could be due to an error returned by the Navitia API."
             ))
