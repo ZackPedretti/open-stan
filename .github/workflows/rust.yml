@@ -10,7 +10,6 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-
   audit:
     runs-on: ubuntu-latest
     permissions:
@@ -18,6 +17,9 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Disable git commit verification
+        run: git config --global commit.gpgSign false
+
       - name: Run cargo audit fix
         uses: simonhyll/cargo-audit@v1
 
