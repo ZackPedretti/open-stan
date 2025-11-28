@@ -14,34 +14,56 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+
+  audit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Run cargo audit fix
+        uses: simonhyll/cargo-audit@v1
 
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          profile: minimal
-
-      - uses: Swatinem/rust-cache@v2
-
-      - name: Run cargo audit
-        uses: rustsec/audit-check@v1
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          annotate: false
-          create-issue: false
-          fail-on-warnings: false
+          branch: bot/cargo-audit
+          title: "[Bot] Audit fixes"
+          commit-message: Cargo audit fixes
+          body: >
+            Updates to Cargo.toml and/or Cargo.lock with security fixes.
+          labels: automated pr
 
-      - name: Run cargo deny
-        uses: EmbarkStudios/cargo-deny-action@v1
+  cargo-deny:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: EmbarkStudios/cargo-deny-action@v2
 
-      - name: Install tarpaulin
-        run: |
-          curl -sSfLo tarpaulin.tar.gz \
-            https://github.com/xd009642/tarpaulin/releases/latest/download/cargo-tarpaulin-x86_64-unknown-linux-gnu.tar.gz
-          tar xzf tarpaulin.tar.gz -C ~/.cargo/bin
+  check:
+    name: Check code coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Build
-        run: cargo build --release
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Run cargo-tarpaulin
+        uses: actions-rs/tarpaulin@v0.1
+
+  build_and_test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo build --release --all-features
