@@ -39,7 +39,6 @@ jobs:
             Updates to Cargo.toml and/or Cargo.lock with security fixes.
           labels: automated pr
 
-
   cargo-deny:
     runs-on: ubuntu-latest
     steps:
@@ -63,7 +62,7 @@ jobs:
         run: cargo install cargo-tarpaulin
 
       - name: Run tarpaulin
-        run: cargo tarpaulin --out Xml
+        run: cargo tarpaulin --out Xmlt --fail-under 70
 
   build_and_test:
     name: Build and test
