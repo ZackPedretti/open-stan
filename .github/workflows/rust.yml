@@ -60,7 +60,10 @@ jobs:
           override: true
 
       - name: Run cargo-tarpaulin
-        uses: actions-rs/tarpaulin@v0.1
+        uses: xd009642/tarpaulin@v0.1
+        with:
+          version: '0.30.0'
+          args: '--out Xml'
 
   build_and_test:
     name: Build and test
