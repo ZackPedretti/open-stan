@@ -62,7 +62,7 @@ jobs:
         run: cargo install cargo-tarpaulin
 
       - name: Run tarpaulin
-        run: cargo tarpaulin --out Xmlt --fail-under 70
+        run: cargo tarpaulin --out Xml --fail-under 70
 
   build_and_test:
     name: Build and test
