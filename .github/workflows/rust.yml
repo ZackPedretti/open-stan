@@ -59,11 +59,11 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Run cargo-tarpaulin
-        uses: xd009642/tarpaulin@v0.1
-        with:
-          version: '0.30.0'
-          args: '--out Xml'
+      - name: Install tarpaulin
+        run: cargo install cargo-tarpaulin
+
+      - name: Run tarpaulin
+        run: cargo tarpaulin --out Xml
 
   build_and_test:
     name: Build and test
