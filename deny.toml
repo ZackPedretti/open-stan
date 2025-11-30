@@ -11,10 +11,13 @@ allow = [
     "MPL-2.0",
 ]
 
-[unmaintained]
-# Fail CI for unmaintained crates except the ones listed below
-deny = true
+[advisories]
+# Deny all unmaintained crates by default
+unmaintained = "deny"
+vulnerability = "deny"
+yanked = "deny"
 
-[unmaintained.allow]
-# Allow this specific unmaintained advisory (transitive via scraper)
-"RUSTSEC-2025-0057" = "fxhash used transitively, cannot fix yet"
+# Ignore specific advisories
+ignore = [
+    "RUSTSEC-2025-0057"
+]
