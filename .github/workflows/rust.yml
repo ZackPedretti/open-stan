@@ -88,4 +88,4 @@ jobs:
         with:
           username: zackpedretti
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - run: docker zackpedretti/open-stan:${{ github.sha }}
+      - run: docker push zackpedretti/open-stan:${{ github.sha }}
