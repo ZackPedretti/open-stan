@@ -11,5 +11,10 @@ allow = [
     "MPL-2.0",
 ]
 
-[advisories]
-deny-warnings = false
+[unmaintained]
+# Fail CI for unmaintained crates except the ones listed below
+deny = true
+
+[unmaintained.allow]
+# Allow this specific unmaintained advisory (transitive via scraper)
+"RUSTSEC-2025-0057" = "fxhash used transitively, cannot fix yet"
