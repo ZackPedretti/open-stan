@@ -83,10 +83,9 @@ jobs:
         with:
           toolchain: stable
           override: true
-      - run: cargo build --release
       - run: docker build -t zackpedretti/open-stan:${{ github.sha }} .
       - uses: docker/login-action@v2
         with:
           username: zackpedretti
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - run: docker push your-dockerhub-user/open-stan:${{ github.sha }}
+      - run: docker zackpedretti/open-stan:${{ github.sha }}
