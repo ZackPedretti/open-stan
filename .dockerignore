@@ -4,3 +4,6 @@ README.md
 README.fr.md
 target
 .github
+deny.toml
+rustfmt.toml
+rust-toolchain.toml
