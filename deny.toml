@@ -12,12 +12,5 @@ allow = [
 ]
 
 [advisories]
-# Deny all unmaintained crates by default
-unmaintained = "deny"
-vulnerability = "deny"
-yanked = "deny"
-
-# Ignore specific advisories
-ignore = [
-    "RUSTSEC-2025-0057"
-]
+unmaintained = "all"
+ignore = ["RUSTSEC-2025-0057"]
