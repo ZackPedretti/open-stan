@@ -73,3 +73,19 @@ jobs:
         with:
           toolchain: stable
       - run: cargo build --release --all-features
+
+  docker:
+    name: Create and Push Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - run: docker build -t zackpedretti/open-stan:${{ github.sha }} .
+      - uses: docker/login-action@v2
+        with:
+          username: zackpedretti
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - run: docker push zackpedretti/open-stan:${{ github.sha }}
