@@ -11,5 +11,5 @@ allow = [
     "MPL-2.0",
 ]
 
-[advisories.ignore]
-["RUSTSEC-2025-0057"]
+[advisories]
+deny-warnings = false
