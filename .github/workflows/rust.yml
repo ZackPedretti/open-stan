@@ -120,6 +120,6 @@ jobs:
             docker rm open-stan || true &&
             docker run -d \
               --name open-stan \
-              -p 80:80 \
+              -p 8080:3000 \
               zackpedretti/open-stan:${{ github.sha }}
           "
