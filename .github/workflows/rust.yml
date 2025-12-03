@@ -119,7 +119,8 @@ jobs:
             docker stop open-stan || true &&
             docker rm open-stan || true &&
             docker run -d \
-              --name open-stan \
-              -p 8080:3000 \
-              zackpedretti/open-stan:${{ github.sha }}
+            --name open-stan \
+            -p 8080:3000 \
+            --user root \
+            zackpedretti/open-stan:${{ github.sha }}
           "
