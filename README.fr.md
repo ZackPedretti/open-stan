@@ -3,6 +3,8 @@
 Une API REST open source construite à partir des données officielles du réseau de bus **STAN (Société de Transport de l’Agglomération Nancéienne)** à **Nancy, France**.
 Ce projet a pour objectif de fournir une **API simple, accessible et communautaire** destinée aux développeurs souhaitant créer des applications, outils ou tableaux de bord utilisant les données de transport en commun de la métropole nancéienne.
 
+Hébergé sur [https://open-stan.fr](https://open-stan.fr).
+
 ---
 
 ## 🚀 Fonctionnalités
