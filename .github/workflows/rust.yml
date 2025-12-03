@@ -121,6 +121,5 @@ jobs:
             docker run -d \
             --name open-stan \
             -p 8080:3000 \
-            --user root \
             zackpedretti/open-stan:${{ github.sha }}
           "
