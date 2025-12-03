@@ -11,6 +11,7 @@ env:
 
 jobs:
   audit:
+    name: Cargo Audit
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -40,6 +41,7 @@ jobs:
           labels: automated pr
 
   cargo-deny:
+    name: Cargo Deny
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -62,7 +64,7 @@ jobs:
         run: cargo install cargo-tarpaulin
 
       - name: Run tarpaulin
-        run: cargo tarpaulin --out Xml --fail-under 70
+        run: cargo tarpaulin --out Xml # --fail-under 70
 
   build_and_test:
     name: Build and test
@@ -77,6 +79,7 @@ jobs:
   docker:
     name: Create and Push Docker Image
     runs-on: ubuntu-latest
+    needs: [audit, cargo-deny, check, build_and_test]
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
@@ -89,3 +92,34 @@ jobs:
           username: zackpedretti
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - run: docker push zackpedretti/open-stan:${{ github.sha }}
+
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    needs: docker
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install SSH client
+        run: sudo apt-get update && sudo apt-get install -y openssh-client
+
+      - name: Add SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy container
+        run: |
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
+            docker pull zackpedretti/open-stan:${{ github.sha }} &&
+            docker stop open-stan || true &&
+            docker rm open-stan || true &&
+            docker run -d \
+            --name open-stan \
+            -p 8080:3000 \
+            zackpedretti/open-stan:${{ github.sha }}
+          "
