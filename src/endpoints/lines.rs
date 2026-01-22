@@ -69,7 +69,6 @@ fn parse_document_into_lines(html: &str) -> anyhow::Result<Vec<Line>> {
 
         lines.push(line);
     }
-
     Ok(lines)
 }
 
@@ -81,6 +80,6 @@ mod tests {
         let html = std::fs::read_to_string("tests/data/homepage.html").unwrap();
         let parsed_result = parse_document_into_lines(&html);
         assert!(parsed_result.is_ok());
-        assert!(parsed_result.unwrap().len() > 0);
+        assert!(parsed_result.unwrap().len() == 43);
     }
 }

@@ -12,6 +12,10 @@ categories = [
     "network-programming"
 ]
 
+[lib]
+name = "open_stan"
+path = "src/lib.rs"
+
 [dependencies]
 axum = { version = "0.8.6", features = ["macros"] }
 tokio = { version = "1.48.0", features = ["full"] }
