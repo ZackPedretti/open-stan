@@ -9,10 +9,13 @@ use axum::extract::{Query, State};
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
-use reqwest::{Client, StatusCode};
+use reqwest::StatusCode;
+use reqwest_rewire::TestableClient;
 use serde::Deserialize;
 use serde_json::json;
 use std::collections::HashSet;
+use std::sync::Arc;
+use tracing::error;
 
 pub fn router() -> Router<ApiState> {
     let router: Router<ApiState> = Router::new().route("/", get(get_stops));
@@ -38,8 +41,8 @@ pub async fn get_stops(
     State(state): State<ApiState>,
 ) -> impl IntoResponse {
     let stops = match query.line {
-        None => get_all_stops(&state.client).await,
-        Some(l) => get_stops_of_line(l, &state.client).await,
+        None => get_all_stops(state.client).await,
+        Some(l) => get_stops_of_line(l, state.client).await,
     };
 
     match stops {
@@ -50,11 +53,11 @@ pub async fn get_stops(
 
 async fn get_stops_of_line(
     line: String,
-    client: &Client,
+    client: Arc<reqwest_rewire::Client>,
 ) -> anyhow::Result<Vec<Stop>> {
     let x_auth_token = create_token();
-    let presigned_url = request_presigned_stops_of_line(client, &line, &x_auth_token).await?;
-    let all_lines = request_lines(client).await?;
+    let presigned_url = request_presigned_stops_of_line(client.clone(), &line, &x_auth_token).await?;
+    let all_lines = request_lines(client.clone()).await?;
     let line = get_line_from_attribute(&line, &all_lines);
     match line {
         None => Err(anyhow!("Invalid line argument")),
@@ -67,14 +70,14 @@ struct StopsResponse {
     stop_areas: Vec<Stop>,
 }
 
-async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
-    let lines = request_lines(client).await?;
+async fn get_all_stops(client: Arc<reqwest_rewire::Client>) -> anyhow::Result<Vec<Stop>> {
+    let lines = request_lines(client.clone()).await?;
     let x_auth_token = create_token();
     let mut all_stops: HashSet<Stop> = HashSet::new();
 
     for line in lines {
-        let presigned_url = request_presigned_stops_of_line(client, &line.id, &x_auth_token).await?;
-        let stops_of_line = request_stops_of_line(line.id, presigned_url, client, &x_auth_token).await?;
+        let presigned_url = request_presigned_stops_of_line(client.clone(), &line.id, &x_auth_token).await?;
+        let stops_of_line = request_stops_of_line(line.id, presigned_url, client.clone(), &x_auth_token).await?;
         for stop in stops_of_line {
             all_stops.insert(stop);
         }
@@ -84,7 +87,7 @@ async fn get_all_stops(client: &Client) -> anyhow::Result<Vec<Stop>> {
 }
 
 async fn request_presigned_stops_of_line(
-    client: &Client,
+    client: Arc<reqwest_rewire::Client>,
     line_id: &str,
     x_auth_token: &str,
 ) -> anyhow::Result<String> {
@@ -99,7 +102,7 @@ async fn request_presigned_stops_of_line(
 async fn request_stops_of_line(
     line_id: String,
     presigned_url: String,
-    client: &Client,
+    client: Arc<reqwest_rewire::Client>,
     x_auth_token: &str,
 ) -> anyhow::Result<Vec<Stop>> {
     let url = format!("https://api.navitia.io/v1/coverage/fr-ne-nancy/lines/{line_id}/stop_areas?count=100&depth=3");
@@ -121,7 +124,7 @@ async fn request_stops_of_line(
     match json_response {
         Ok(r) => Ok(r.stop_areas),
         Err(e) => {
-            println!("{}", e);
+            error!("{e}");
             Err(anyhow::anyhow!(
                 "Was unable to parse JSON response. Could be due to an error returned by the Navitia API."
             ))

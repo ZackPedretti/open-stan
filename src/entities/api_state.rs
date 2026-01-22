@@ -1,6 +1,6 @@
-use reqwest::Client;
+use std::sync::Arc;
 
 #[derive(Clone)]
 pub struct ApiState {
-    pub client: Client,
+    pub client: Arc<reqwest_rewire::Client>,
 }

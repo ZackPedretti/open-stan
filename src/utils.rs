@@ -1,8 +1,8 @@
 use crate::entities::line::Line;
 use axum::http::HeaderMap;
-use reqwest::Client;
+use reqwest_rewire::TestableClient;
 use serde_json::{Map, json};
-use std::num::ParseIntError;
+use std::{num::ParseIntError, sync::Arc};
 
 /// Returns the necessary headers to make calls to the STAN API
 ///
@@ -34,7 +34,7 @@ pub fn get_stan_api_calls_headers() -> HeaderMap {
 /// # Errors
 /// Returns `anyhow::Error` if the request failed
 pub async fn request_presigned_navitia_url(
-    client: &Client,
+    client: Arc<reqwest_rewire::Client>,
     url: String,
     x_auth_token: &str,
 ) -> anyhow::Result<String> {

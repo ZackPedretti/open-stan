@@ -7,9 +7,10 @@ use crate::entities::api_doc::ApiDoc;
 use crate::entities::api_state::ApiState;
 use axum::Router;
 use axum::routing::get;
+use std::fs;
+use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
-use std::fs;
 
 pub mod endpoints;
 pub mod entities;
@@ -25,9 +26,10 @@ pub async fn great() -> String {
 /// # Errors
 /// Returns an `anyhow::Error` if the Reqwest client could not be built successfully
 pub fn init_router() -> anyhow::Result<Router> {
-    let client = reqwest::Client::builder()
+    let reqwest_client = reqwest::Client::builder()
         .user_agent("Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0")
         .build()?;
+    let client = Arc::new(reqwest_rewire::Client::ReqwestClient(reqwest_client));
     let state = ApiState { client };
     let router = Router::new()
         .route("/", get(great))

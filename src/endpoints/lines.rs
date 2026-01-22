@@ -3,8 +3,10 @@ use axum::extract::State;
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
-use reqwest::{Client, StatusCode};
+use reqwest::StatusCode;
+use reqwest_rewire::TestableClient;
 use scraper::{Html, Selector};
+use std::sync::Arc;
 
 pub fn router() -> Router<ApiState> {
     Router::new().route("/", get(get_lines))
@@ -21,7 +23,7 @@ pub fn router() -> Router<ApiState> {
 )]
 
 pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
-    match request_lines(&state.client).await {
+    match request_lines(state.client).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()).into_response(),
     }
@@ -32,7 +34,7 @@ pub async fn get_lines(State(state): State<ApiState>) -> impl IntoResponse {
 ///
 /// # Errors
 /// Returns an `anyhow::Error` if an error happened during requesting or parsing the HTML
-pub async fn request_lines(client: &Client) -> anyhow::Result<Vec<Line>> {
+pub async fn request_lines(client: Arc<reqwest_rewire::Client>) -> anyhow::Result<Vec<Line>> {
     let html = client.get("https://www.reseau-stan.com/").send().await?.text().await?;
 
     parse_document_into_lines(&html)
@@ -46,7 +48,7 @@ fn parse_document_into_lines(html: &str) -> anyhow::Result<Vec<Line>> {
             return Err(anyhow::anyhow!(err.to_string()));
         }
     };
-    
+
     let document = Html::parse_document(html);
 
     for elt in document.select(&line_options_selector) {

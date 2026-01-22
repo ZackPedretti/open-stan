@@ -1,3 +1,5 @@
+use std::sync::Arc;
+
 use crate::endpoints::lines::request_lines;
 use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::line::{ArrivalLineInfo, PartialLineInfo};
@@ -7,7 +9,8 @@ use axum::extract::{Query, State};
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
-use reqwest::{Client, StatusCode};
+use reqwest::StatusCode;
+use reqwest_rewire::TestableClient;
 use scraper::{ElementRef, Html, Selector};
 
 pub fn router() -> Router<ApiState> {
@@ -35,7 +38,7 @@ pub async fn get_arrivals(
     State(state): State<ApiState>,
     Query(query): Query<GetRemainingTimeToStopQueryArgs>,
 ) -> impl IntoResponse {
-    match request_remaining_times_to_stop(query.stop, query.line, &state.client).await {
+    match request_remaining_times_to_stop(query.stop, query.line, state.client).await {
         Ok(v) => Json(v).into_response(),
         Err(e) => (StatusCode::BAD_REQUEST, e.to_string()).into_response(),
     }
@@ -44,7 +47,7 @@ pub async fn get_arrivals(
 async fn request_remaining_times_to_stop(
     stop: String,
     line: Option<String>,
-    client: &Client,
+    client: Arc<reqwest_rewire::Client>,
 ) -> anyhow::Result<Vec<Arrival>> {
     let html_text = client
         .post("https://www.reseau-stan.com/?type=476")
