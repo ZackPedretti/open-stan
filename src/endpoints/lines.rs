@@ -80,6 +80,7 @@ mod tests {
         let html = std::fs::read_to_string("tests/data/homepage.html").unwrap();
         let parsed_result = parse_document_into_lines(&html);
         assert!(parsed_result.is_ok());
+        // 43 lines in html doc
         assert!(parsed_result.unwrap().len() == 43);
     }
 }

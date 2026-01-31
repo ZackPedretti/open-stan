@@ -1,5 +1,3 @@
-use std::sync::Arc;
-
 use crate::endpoints::lines::request_lines;
 use crate::entities::api_query_args::GetRemainingTimeToStopQueryArgs;
 use crate::entities::line::{ArrivalLineInfo, PartialLineInfo};
@@ -12,6 +10,7 @@ use axum::{Json, Router};
 use reqwest::StatusCode;
 use reqwest_rewire::TestableClient;
 use scraper::{ElementRef, Html, Selector};
+use std::sync::Arc;
 
 pub fn router() -> Router<ApiState> {
     let router: Router<ApiState> = Router::new().route("/", get(get_arrivals));
